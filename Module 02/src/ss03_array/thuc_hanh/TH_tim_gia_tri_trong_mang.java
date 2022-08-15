@@ -1,4 +1,4 @@
-package exercise01.SS03_Array.thuc_hanh;
+package ss03_array.thuc_hanh;
 
 import java.util.Scanner;
 
