@@ -50,71 +50,71 @@ public class Car extends Vehicle{
                 '}';
     }
 
-    @Override
-    public void addNewVehicle() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập biển số: ");
-        String inputBienSo = scanner.nextLine();
-        System.out.println("Nhập năm sản xuất: ");
-        String inputNamSanXuat = scanner.nextLine();
-        System.out.println("Chọn hãng sản xuất trong list: ");
-        String inputHangSanXuat = ChoseHangSX.choseHangSXFromList();
-        System.out.println("Nhập tên chủ sở hữu: ");
-        String inputChuSoHuu = scanner.nextLine();
-        System.out.println("Kiểu xe (du lịch, xe khách)");
-        String inputKieuXe = scanner.nextLine();
-        System.out.println("Nhập số chỗ ngồi: ");
-        int inputSoChoNgoi = Integer.parseInt(scanner.nextLine());
-
-        Car car = new Car(inputBienSo,inputHangSanXuat,inputNamSanXuat,inputChuSoHuu,inputSoChoNgoi,inputKieuXe);
-        System.out.println(car.toString());
-        carList.add(car);
-    }
-
-    public void displayVehicleList(){
-        for (Car car: carList){
-            System.out.println(car);
-        }
-    }
-
-    @Override
-    public void deleteVehicle(String inputID) {
-        for (int i = 0; i < carList.size(); i++){
-            if (inputID.equals(carList.get(i).getBienKiemSoat())){
-                System.out.println("Xóa phương tiện sau: " + carList.get(i).toString());
-                System.out.println("1. Yes");
-                System.out.println("2. No");
-                Scanner scanner = new Scanner(System.in);
-
-                switch (scanner.nextInt()) {
-                    case 1: {
-                        carList.remove(i);
-                        System.out.println("Đã xóa thành công");
-                        break;
-                    }
-                    case 2: {
-                        VehicleController.displayMainMenu();
-                    }
-                }
-            }else {
-                System.out.println("Không có biển kiểm soát trong danh sách ô tô");
-            }
-        }
-    }
-
-    @Override
-    public void findVehicle(String inputID) {
-        boolean check = false;
-        for (int i = 0; i<carList.size(); i++){
-            boolean isFoundID = carList.get(i).getBienKiemSoat().contains(inputID);
-            if (isFoundID){
-                System.out.println(carList.get(i));
-                check = true;
-            }
-        }
-        if (check = false){
-            System.out.println("Không tìm thấy BKS trong danh sách ô tô");
-        }
-    }
+//    @Override
+//    public void addNewVehicle() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Nhập biển số: ");
+//        String inputBienSo = scanner.nextLine();
+//        System.out.println("Nhập năm sản xuất: ");
+//        String inputNamSanXuat = scanner.nextLine();
+//        System.out.println("Chọn hãng sản xuất trong list: ");
+//        String inputHangSanXuat = ChoseHangSX.choseHangSXFromList();
+//        System.out.println("Nhập tên chủ sở hữu: ");
+//        String inputChuSoHuu = scanner.nextLine();
+//        System.out.println("Kiểu xe (du lịch, xe khách)");
+//        String inputKieuXe = scanner.nextLine();
+//        System.out.println("Nhập số chỗ ngồi: ");
+//        int inputSoChoNgoi = Integer.parseInt(scanner.nextLine());
+//
+//        Car car = new Car(inputBienSo,inputHangSanXuat,inputNamSanXuat,inputChuSoHuu,inputSoChoNgoi,inputKieuXe);
+//        System.out.println(car.toString());
+//        carList.add(car);
+//    }
+//
+//    public void displayVehicleList(){
+//        for (Car car: carList){
+//            System.out.println(car);
+//        }
+//    }
+//
+//    @Override
+//    public void deleteVehicle(String inputID) {
+//        for (int i = 0; i < carList.size(); i++){
+//            if (inputID.equals(carList.get(i).getBienKiemSoat())){
+//                System.out.println("Xóa phương tiện sau: " + carList.get(i).toString());
+//                System.out.println("1. Yes");
+//                System.out.println("2. No");
+//                Scanner scanner = new Scanner(System.in);
+//
+//                switch (scanner.nextInt()) {
+//                    case 1: {
+//                        carList.remove(i);
+//                        System.out.println("Đã xóa thành công");
+//                        break;
+//                    }
+//                    case 2: {
+//                        VehicleController.displayMainMenu();
+//                    }
+//                }
+//            }else {
+//                System.out.println("Không có biển kiểm soát trong danh sách ô tô");
+//            }
+//        }
+//    }
+//
+//    @Override
+//    public void findVehicle(String inputID) {
+//        boolean check = false;
+//        for (int i = 0; i<carList.size(); i++){
+//            boolean isFoundID = carList.get(i).getBienKiemSoat().contains(inputID);
+//            if (isFoundID){
+//                System.out.println(carList.get(i));
+//                check = true;
+//            }
+//        }
+//        if (check = false){
+//            System.out.println("Không tìm thấy BKS trong danh sách ô tô");
+//        }
+//    }
 
 }

@@ -57,8 +57,8 @@ public abstract class Vehicle {
                 ", chuSoHuu='" + chuSoHuu + '\'' +
                 '}';
     }
-    public abstract void addNewVehicle();
-    public abstract void displayVehicleList();
-    public abstract void deleteVehicle(String inputID);
-    public abstract void findVehicle(String inputID);
+//    public abstract void addNewVehicle();
+//    public abstract void displayVehicleList();
+//    public abstract void deleteVehicle(String inputID);
+//    public abstract void findVehicle(String inputID);
 }
