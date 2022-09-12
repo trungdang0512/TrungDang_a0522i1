@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MotorBikeRepositoryImpl implements IMotorBikeRepository {
+
     private static List<Motorbike> motorbikeList = new ArrayList<>();
 
     @Override
@@ -26,11 +27,18 @@ public class MotorBikeRepositoryImpl implements IMotorBikeRepository {
 
     @Override
     public String findMotoBike(String indexBKS) {
-        return motorbikeList.get(checkValidMotorBike(indexBKS)).toString();
+        return motorbikeList.get(getIndexMotorBike(indexBKS)).toString();
     }
 
     @Override
-    public int checkValidMotorBike(String indexBKS) {
-        return motorbikeList.indexOf(indexBKS);
+    public int getIndexMotorBike(String indexBKS) {
+        Motorbike motorbike =new Motorbike(indexBKS);
+        return motorbikeList.indexOf(motorbike);
+    }
+
+    @Override
+    public boolean checkValidMotorBike(String indexBKS) {
+        Motorbike motorbike = new Motorbike(indexBKS);
+        return motorbikeList.contains(motorbike);
     }
 }

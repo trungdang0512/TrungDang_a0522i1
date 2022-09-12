@@ -13,6 +13,7 @@ public interface IMotorBikeRepository {
 
     String findMotoBike(String indexBKS);
 
-    int checkValidMotorBike(String indexBKS);
+    int getIndexMotorBike(String indexBKS);
 
+    boolean checkValidMotorBike(String indexBKS);
 }

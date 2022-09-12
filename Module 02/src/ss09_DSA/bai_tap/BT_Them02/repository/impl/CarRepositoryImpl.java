@@ -26,12 +26,19 @@ public class CarRepositoryImpl implements ICarRepository {
 
     @Override
     public String findCar(String indexBKS) {
-        return carList.get(checkValidCar(indexBKS)).toString();
+        return carList.get(getIndexCar(indexBKS)).toString();
     }
 
     @Override
-    public int checkValidCar(String indexBKS) {
-        return carList.indexOf(indexBKS);
+    public int getIndexCar(String indexBKS) {
+        Car car = new Car(indexBKS);
+        return carList.indexOf(car);
+    }
+
+    @Override
+    public boolean checkValidCar(String indexBKS) {
+        Car car = new Car(indexBKS);
+        return carList.contains(car);
     }
 
 }

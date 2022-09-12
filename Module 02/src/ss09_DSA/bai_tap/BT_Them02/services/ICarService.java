@@ -5,11 +5,18 @@ import ss09_DSA.bai_tap.BT_Them02.models.Car;
 import java.util.List;
 
 public interface ICarService {
-    void addNewCar(Car car);
+    void addNewCar();
 
     void displayCarList();
 
     void removeCar(String indexBKS);
 
-    void findCar(String indexBKS);
+    String findCar(String indexBKS);
+
+    boolean checkValidCar(String indexBKS);
+
+    Car inputCarInfo();
+
+    String findBKS(String inputBKS);
+
 }

@@ -1,5 +1,7 @@
 package ss09_DSA.bai_tap.BT_Them02.models;
 
+import java.util.Objects;
+
 public abstract class Vehicle {
     String bienKiemSoat;
     String hangSanXuat;
@@ -7,6 +9,10 @@ public abstract class Vehicle {
     String chuSoHuu;
 
     public Vehicle() {
+    }
+
+    public Vehicle(String bienKiemSoat){
+        this.bienKiemSoat = bienKiemSoat;
     }
 
     public Vehicle(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu) {
@@ -57,6 +63,20 @@ public abstract class Vehicle {
                 ", chuSoHuu='" + chuSoHuu + '\'' +
                 '}';
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return Objects.equals(bienKiemSoat, vehicle.bienKiemSoat);
+    }
+
+//    @Override
+//    public int hashCode() {
+//        return 0;
+//    }
 //    public abstract void addNewVehicle();
 //    public abstract void displayVehicleList();
 //    public abstract void deleteVehicle(String inputID);

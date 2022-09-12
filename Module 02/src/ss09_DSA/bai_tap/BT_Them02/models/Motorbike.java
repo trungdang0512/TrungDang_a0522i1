@@ -1,11 +1,7 @@
 package ss09_DSA.bai_tap.BT_Them02.models;
 
-import ss09_DSA.bai_tap.BT_Them02.controllers.VehicleController;
-import ss09_DSA.bai_tap.BT_Them02.services.ChoseHangSX;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Motorbike extends Vehicle{
     String congSuat;
@@ -13,10 +9,15 @@ public class Motorbike extends Vehicle{
     public Motorbike() {
     }
 
+    public Motorbike(String bienKiemSoat) {
+        super(bienKiemSoat);
+    }
+
     public Motorbike(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu, String congSuat) {
         super(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu);
         this.congSuat = congSuat;
     }
+
 
     public String getCongSuat() {
         return congSuat;
@@ -38,6 +39,18 @@ public class Motorbike extends Vehicle{
                 "congSuat='" + congSuat + '\'' +
                 '}';
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        return super.equals(o);
+//    }
+
+
+
+    //    @Override
+//    public int compareTo(Vehicle o) {
+//        return Integer.parseInt(this.bienKiemSoat) - Integer.parseInt(o.bienKiemSoat);
+//    }
 
 //    @Override
 //    public void addNewVehicle(){

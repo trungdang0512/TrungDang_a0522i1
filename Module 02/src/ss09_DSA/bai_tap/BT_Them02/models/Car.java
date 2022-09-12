@@ -1,17 +1,17 @@
 package ss09_DSA.bai_tap.BT_Them02.models;
 
-import ss09_DSA.bai_tap.BT_Them02.controllers.VehicleController;
-import ss09_DSA.bai_tap.BT_Them02.services.ChoseHangSX;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle {
     int soChoNgoi;
     String kieuXe;
 
     public Car() {
+    }
+
+    public Car(String bienKiemSoat) {
+        super(bienKiemSoat);
     }
 
     public Car(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
@@ -36,8 +36,6 @@ public class Car extends Vehicle{
         this.kieuXe = kieuXe;
     }
 
-    public List<Car> carList = new ArrayList<>();
-
     @Override
     public String toString() {
         return "Car{" +
@@ -50,7 +48,14 @@ public class Car extends Vehicle{
                 '}';
     }
 
+
+
 //    @Override
+//    public int compareTo(Vehicle o) {
+//        return Integer.parseInt(this.bienKiemSoat) - Integer.parseInt(o.bienKiemSoat);
+//    }
+
+    //    @Override
 //    public void addNewVehicle() {
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("Nhập biển số: ");

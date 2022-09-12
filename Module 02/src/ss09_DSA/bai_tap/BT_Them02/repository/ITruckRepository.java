@@ -13,5 +13,7 @@ public interface ITruckRepository {
 
     String findTruck(String indexBKS);
 
-    int checkValidTruck(String indexBKS);
+    boolean checkValidTruck(String indexBKS);
+
+    int getIndexTruck(String indexBKS);
 }

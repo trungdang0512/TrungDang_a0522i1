@@ -14,7 +14,7 @@ public interface ICarRepository {
 
     String findCar(String indexBKS);
 
-    int checkValidCar(String indexBKS);
+    int getIndexCar(String indexBKS);
 
-
+    boolean checkValidCar(String indexBKS);
 }

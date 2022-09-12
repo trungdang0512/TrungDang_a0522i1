@@ -27,11 +27,18 @@ public class TruckRepositoryImpl implements ITruckRepository {
 
     @Override
     public String findTruck(String indexBKS) {
-        return truckList.get(checkValidTruck(indexBKS)).toString();
+        return truckList.get(getIndexTruck(indexBKS)).toString();
     }
 
     @Override
-    public int checkValidTruck(String indexBKS) {
-        return truckList.indexOf(indexBKS);
+    public boolean checkValidTruck(String indexBKS) {
+        Truck truck = new Truck(indexBKS);
+        return truckList.contains(truck);
+    }
+
+    @Override
+    public int getIndexTruck(String indexBKS) {
+        Truck truck = new Truck(indexBKS);
+        return truckList.indexOf(truck);
     }
 }

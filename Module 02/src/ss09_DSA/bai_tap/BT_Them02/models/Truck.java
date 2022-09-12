@@ -1,16 +1,16 @@
 package ss09_DSA.bai_tap.BT_Them02.models;
 
-import ss09_DSA.bai_tap.BT_Them02.controllers.VehicleController;
-import ss09_DSA.bai_tap.BT_Them02.services.ChoseHangSX;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Truck extends Vehicle{
     String trongTai;
 
     public Truck() {
+    }
+
+    public Truck(String bienKiemSoat) {
+        super(bienKiemSoat);
     }
 
     public Truck(String bienKiemSoat, String hangSanXuat, String namSanXuat, String chuSoHuu, String trongTai) {
@@ -38,6 +38,11 @@ public class Truck extends Vehicle{
                 "trongTai='" + trongTai + '\'' +
                 '}';
     }
+
+//    @Override
+//    public int compareTo(Vehicle o) {
+//        return Integer.parseInt(this.bienKiemSoat) - Integer.parseInt(o.bienKiemSoat);
+//    }
 
 //    @Override
 //    public void addNewVehicle(){
