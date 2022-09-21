@@ -8,6 +8,9 @@ public abstract class Person {
     String phoneNumber;
     String emailAddress;
 
+    public Person() {
+    }
+
     public Person(String name, String dateOfBirth, String gender, String idNumber, String phoneNumber, String emailAddress) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;

@@ -1,12 +1,15 @@
 package models;
 
 public class Employee extends Person{
-    String employeeID;
+    int employeeID;
     String education;
     String workingPosition;
-    String salary;
+    double salary;
 
-    public Employee(String name, String dateOfBirth, String gender, String idNumber, String phoneNumber, String emailAddress, String employeeID, String education, String workingPosition, String salary) {
+    public Employee(int employeeID){
+        this.employeeID = employeeID;
+    }
+    public Employee(String name, String dateOfBirth, String gender, String idNumber, String phoneNumber, String emailAddress, int employeeID, String education, String workingPosition, double salary) {
         super(name, dateOfBirth, gender, idNumber, phoneNumber, emailAddress);
         this.employeeID = employeeID;
         this.education = education;
@@ -14,11 +17,11 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-    public String getEmployeeID() {
+    public int getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(String employeeID) {
+    public void setEmployeeID(int employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -38,11 +41,11 @@ public class Employee extends Person{
         this.workingPosition = workingPosition;
     }
 
-    public String getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 

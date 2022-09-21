@@ -1,4 +1,4 @@
-package SS13_Sort.bai_tap;
+package ss13_Sort.bai_tap;
 
 public class InsertSort {
     static int[] list = {2,14,1,8,44,21,10,35,7};

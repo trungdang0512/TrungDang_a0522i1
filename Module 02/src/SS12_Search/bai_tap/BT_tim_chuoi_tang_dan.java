@@ -1,4 +1,4 @@
-package SS12_Search.bai_tap;
+package ss12_Search.bai_tap;
 
 import java.util.LinkedList;
 import java.util.Scanner;

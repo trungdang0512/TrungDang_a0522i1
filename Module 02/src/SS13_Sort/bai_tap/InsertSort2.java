@@ -1,4 +1,4 @@
-package SS13_Sort.bai_tap;
+package ss13_Sort.bai_tap;
 
 import java.util.Scanner;
 
