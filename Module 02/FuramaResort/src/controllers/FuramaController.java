@@ -1,8 +1,16 @@
 package controllers;
 
+import services.CustomerService;
+import services.EmployeeService;
+import services.Impl.CustomerServiceImpl;
+import services.Impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
+    private static EmployeeService employeeService = new EmployeeServiceImpl();
+    private static CustomerService customerService = new CustomerServiceImpl();
+
     public static void main(String[] args) {
         displayMainMenu();
     }
@@ -56,11 +64,16 @@ public class FuramaController {
 
             switch (scanner.nextInt()){
                 case 1:
-                case 2:
-                case 3:
-                case 4: {
-                    displayMainMenu();
+                    employeeService.displayAll();
                     break;
+                case 2:
+                    employeeService.addNewEmployee();
+                    break;
+                case 3:
+                    employeeService.editEmployee();
+                    break;
+                case 4: {
+                    return;
                 }
         }
         }
@@ -77,11 +90,16 @@ public class FuramaController {
 
             switch (scanner.nextInt()){
                 case 1:
-                case 2:
-                case 3:
-                case 4:{
-                    displayMainMenu();
+                    customerService.displayAll();
                     break;
+                case 2:
+                    customerService.addNewCustomer();
+                    break;
+                case 3:
+                    customerService.editCustomer();
+                    break;
+                case 4:{
+                    return;
                 }
         }
         }
@@ -101,8 +119,7 @@ public class FuramaController {
                 case 2:
                 case 3:
                 case 4:{
-                    displayMainMenu();
-                    break;
+                    return;
                 }
         }
         }
@@ -126,8 +143,7 @@ public class FuramaController {
                 case 4:
                 case 5:
                 case 6:{
-                    displayMainMenu();
-                    break;
+                    return;
                 }
         }
         }
@@ -145,8 +161,7 @@ public class FuramaController {
                 case 1:
                 case 2:
                 case 3:{
-                    displayMainMenu();
-                    break;
+                    return;
                 }
         }
         }

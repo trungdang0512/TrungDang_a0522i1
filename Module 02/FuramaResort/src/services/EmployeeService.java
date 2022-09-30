@@ -1,15 +1,13 @@
 package services;
 
-import models.Employee;
-
-import java.util.List;
+import models.Person.Employee;
 
 public interface EmployeeService extends Service{
     void displayAll();
 
     void addNewEmployee();
 
-    void editEmployee(int inputID);
+    void editEmployee();
 
     int getEmpIndex(Employee employee);
 
