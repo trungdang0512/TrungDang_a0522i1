@@ -2,9 +2,9 @@ package models.Facility;
 
 public class House extends Facility{
     String roomStandard;
-    String numberOfFloor;
+    int numberOfFloor;
 
-    public House(String nameService, String usingArea, String hiringPrice, String numberOfPeople, String hiringKind, String roomStandard, String numberOfFloor) {
+    public House(String nameService, int usingArea, double hiringPrice, int numberOfPeople, String hiringKind, String roomStandard, int numberOfFloor) {
         super(nameService, usingArea, hiringPrice, numberOfPeople, hiringKind);
         this.roomStandard = roomStandard;
         this.numberOfFloor = numberOfFloor;
@@ -18,11 +18,11 @@ public class House extends Facility{
         this.roomStandard = roomStandard;
     }
 
-    public String getNumberOfFloor() {
+    public int getNumberOfFloor() {
         return numberOfFloor;
     }
 
-    public void setNumberOfFloor(String numberOfFloor) {
+    public void setNumberOfFloor(int numberOfFloor) {
         this.numberOfFloor = numberOfFloor;
     }
 

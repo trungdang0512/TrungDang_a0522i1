@@ -2,12 +2,12 @@ package models.Facility;
 
 public abstract class Facility {
     String nameService;
-    String usingArea;
-    String hiringPrice;
-    String numberOfPeople;
+    int usingArea;
+    double hiringPrice;
+    int numberOfPeople;
     String hiringKind;
 
-    public Facility(String nameService, String usingArea, String hiringPrice, String numberOfPeople, String hiringKind) {
+    public Facility(String nameService, int usingArea, double hiringPrice, int numberOfPeople, String hiringKind) {
         this.nameService = nameService;
         this.usingArea = usingArea;
         this.hiringPrice = hiringPrice;
@@ -23,27 +23,27 @@ public abstract class Facility {
         this.nameService = nameService;
     }
 
-    public String getUsingArea() {
+    public int getUsingArea() {
         return usingArea;
     }
 
-    public void setUsingArea(String usingArea) {
+    public void setUsingArea(int usingArea) {
         this.usingArea = usingArea;
     }
 
-    public String getHiringPrice() {
+    public double getHiringPrice() {
         return hiringPrice;
     }
 
-    public void setHiringPrice(String hiringPrice) {
+    public void setHiringPrice(double hiringPrice) {
         this.hiringPrice = hiringPrice;
     }
 
-    public String getNumberOfPeople() {
+    public int getNumberOfPeople() {
         return numberOfPeople;
     }
 
-    public void setNumberOfPeople(String numberOfPeople) {
+    public void setNumberOfPeople(int numberOfPeople) {
         this.numberOfPeople = numberOfPeople;
     }
 
