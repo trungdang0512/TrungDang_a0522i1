@@ -9,19 +9,15 @@ public interface IProductService {
 
     void changeProductInfo();
 
-    void removeProduct(int inputID);
+    void removeProduct();
 
     void findProductByName();
-
-    List<Product> arrangeLtoH();
-
-    List<Product> arrangeHtoL();
 
     void displayProductList();
 
     int findProductIndex(Product product);
 
-    boolean checkProductIdExist(int inpuID);
+    boolean checkProductIdExist(int inputID);
 
     boolean checkProductNameExist(String inputName);
 

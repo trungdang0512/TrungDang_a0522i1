@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadCSV {
-    private static final String FILE_URL = "D:\\CodeGym\\TrungDang_a0522i1\\Module 02\\src\\ss15_IOTextFile\\bai_tap\\Read_CSV\\file.csv";
+    private static final String FILE_URL = "D:\\CodeGym\\TrungDang_a0522i1\\Module 02\\src\\ss15_IOTextFile\\bai_tap\\Read_CSV\\mobile.csv";
     private static final String NEW_FILE = "D:\\CodeGym\\TrungDang_a0522i1\\Module 02\\src\\ss15_IOTextFile\\bai_tap\\Read_CSV\\newfile.csv";
     public static List<City> readCSV() throws IOException {
         List<City> cityList = new ArrayList<>();
@@ -25,7 +25,7 @@ public class ReadCSV {
             String fullName = temp[2];
 
             city = new City(id,shortName,fullName);
-            System.out.println(city.toString());
+//            System.out.println(city.toString());
             cityList.add(city);
         }
         bufferedReader.close();
@@ -50,6 +50,9 @@ public class ReadCSV {
 
     public static void main(String[] args) throws IOException {
         List<City> list = ReadCSV.readCSV();
-        ReadCSV.writeCSV(list);
+        for(City city: list){
+            System.out.println(city.toString());
+        }
+//        ReadCSV.writeCSV(list);
     }
 }

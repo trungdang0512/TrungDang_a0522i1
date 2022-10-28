@@ -31,6 +31,8 @@ public class ProductController {
                     productService.changeProductInfo();
                     break;
                 case 3:
+                    productService.removeProduct();
+                    break;
                 case 4:
                     productService.displayProductList();
                     break;

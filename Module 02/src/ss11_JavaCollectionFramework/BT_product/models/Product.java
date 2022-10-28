@@ -4,9 +4,9 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class Product {
-    private int id;
-    private String productName;
-    private double price;
+    public int id;
+    public String productName;
+    public double price;
 
     public Product() {
     }
@@ -65,12 +65,4 @@ public class Product {
         Product product = (Product) o;
         return id == product.id || Objects.equals(productName, product.productName);
     }
-
-
-//    @Override
-//    public int compareTo(Product o) {
-//        int a = (int) this.price;
-//        int b = (int) o.price;
-//        return a-b;
-//    }
 }

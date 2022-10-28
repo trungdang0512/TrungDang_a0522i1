@@ -1,0 +1,5 @@
+package ss11_JavaCollectionFramework.BT_product.util;
+
+public class Constant {
+    public static final String FILE_PATH = "D:\\CodeGym\\TrungDang_a0522i1\\Module 02\\src\\ss11_JavaCollectionFramework\\BT_product\\data\\product.csv";
+}

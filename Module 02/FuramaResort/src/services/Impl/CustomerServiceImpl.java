@@ -2,12 +2,14 @@ package services.Impl;
 
 import models.Person.Customer;
 import services.CustomerService;
+import utils.StringRegexUtils;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
+    private static StringRegexUtils stringRegexUtils = new StringRegexUtils();
     private static Scanner scanner = new Scanner(System.in);
     private static List<Customer> customerList = new LinkedList<>();
 
@@ -57,9 +59,15 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustomerInfo() {
+        boolean check = true;
         System.out.println("Input new Customer info: ");
         System.out.println("Input name: ");
         String name = scanner.nextLine();
+        while (!check) {
+            check = stringRegexUtils.validate(name,stringRegexUtils.SERVICE_NAME);
+            name = scanner.nextLine();
+        }
+
         System.out.println("Input Date of birth: ");
         String date = scanner.nextLine();
         System.out.println("Input gender (male/female): ");

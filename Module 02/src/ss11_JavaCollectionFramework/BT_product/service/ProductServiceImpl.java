@@ -4,7 +4,7 @@ import ss11_JavaCollectionFramework.BT_product.helper.SortByPriceHtoL;
 import ss11_JavaCollectionFramework.BT_product.helper.SortByPriceLtoH;
 import ss11_JavaCollectionFramework.BT_product.models.Product;
 import ss11_JavaCollectionFramework.BT_product.repository.IProductRepository;
-import ss11_JavaCollectionFramework.BT_product.repository.ProducRepositoryImpl;
+import ss11_JavaCollectionFramework.BT_product.repository.ProductRepositoryImpl;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class ProductServiceImpl implements IProductService{
     private Scanner scanner = new Scanner(System.in);
-    private static IProductRepository productRepository = new ProducRepositoryImpl();
+    private static IProductRepository productRepository = new ProductRepositoryImpl();
 
 
     @Override
@@ -24,16 +24,8 @@ public class ProductServiceImpl implements IProductService{
     public void changeProductInfo() {
         List<Product> productList = productRepository.findAll();
 
-            System.out.println("Please input the product ID which you want to change: ");
-            int inputID = Integer.parseInt(scanner.nextLine());
-//            boolean checkExist = productRepository.checkProductIdExist(inputID);
-
-//        while (checkExist = false) {
-//            System.out.println("Please input the product ID which you want to change: ");
-//            inputID = Integer.parseInt(scanner.nextLine());
-//            checkExist = productRepository.checkProductIdExist(inputID);
-//        }
-
+        System.out.println("Please input the product ID which you want to change: ");
+        int inputID = Integer.parseInt(scanner.nextLine());
         Product currentProduct = productRepository.findProductByID(inputID);
         int currentProductIndex = productRepository.findProductIndex(currentProduct);
         System.out.println("Please input new info for this product " + currentProduct.toString());
@@ -44,8 +36,28 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public void removeProduct(int inputID) {
+    public void removeProduct() {
+        List<Product> productList = productRepository.findAll();
 
+        System.out.println("Input product's ID to remove: ");
+        int inputID = scanner.nextInt();
+        Product currentProduct = productRepository.findProductByID(inputID);
+        if (currentProduct != null ){
+            int currentProductIndex = this.findProductIndex(currentProduct);
+            System.out.println("Are you sure to remove this product: " + productList.get(currentProductIndex).toString());
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            switch (scanner.nextInt()) {
+                case 1:
+                    productRepository.removeProduct(currentProductIndex);
+                    System.out.println("Done!");
+                    break;
+                case 2:
+                    return;
+            }
+        }else {
+            System.out.println("Cant find product!");
+        }
     }
 
     @Override
@@ -61,16 +73,6 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public List<Product> arrangeLtoH() {
-        return null;
-    }
-
-    @Override
-    public List<Product> arrangeHtoL() {
-        return null;
-    }
-
-    @Override
     public void displayProductList() {
         List<Product> productList = productRepository.findAll();
         for (Product product: productList){
@@ -80,17 +82,17 @@ public class ProductServiceImpl implements IProductService{
 
     @Override
     public int findProductIndex(Product product) {
-        return 0;
+        return productRepository.findProductIndex(product);
     }
 
     @Override
-    public boolean checkProductIdExist(int inpuID) {
-        return false;
+    public boolean checkProductIdExist(int inputID) {
+        return productRepository.checkProductIdExist(inputID);
     }
 
     @Override
     public boolean checkProductNameExist(String inputName) {
-        return false;
+        return productRepository.checkProductNameExist(inputName);
     }
 
     @Override
