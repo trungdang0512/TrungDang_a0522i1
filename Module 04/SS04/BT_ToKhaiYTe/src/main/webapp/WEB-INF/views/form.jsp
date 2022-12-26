@@ -1,0 +1,94 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Trung Dang
+  Date: 26/12/2022
+  Time: 00:23
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Medical Form</title>
+</head>
+<body>
+<center>
+    <h2>Personal Medical Form</h2>
+    <a href="/update">Update form</a>
+    <table border="1">
+        <tr>
+            <td>Họ và Tên: </td>
+            <td>${name}</td>
+        </tr>
+        <tr>
+            <td>Năm sinh: </td>
+            <td>${birthDate}</td>
+        </tr>
+        <tr>
+            <td>Giới tính: </td>
+            <td>${gender}</td>
+        </tr>
+        <tr>
+            <td>Quốc tịch: </td>
+            <td>${nationality}</td>
+        </tr>
+        <tr>
+            <td>CMND hoặc Hộ chiếu: </td>
+            <td>${id}</td>
+        </tr>
+        <tr>
+            <td>Thông tin đi lại:</td>
+            <td>${vehicle}</td>
+        </tr>
+        <tr>
+            <td>Số hiệu phương tiện:</td>
+            <td>${vehicleId}</td>
+            <td>Số ghế:</td>
+            <td>${vehicleChair}</td>
+        </tr>
+        <tr>
+            <td>Ngày khởi hành:</td>
+            <td>${departDate}</td>
+            <td>Ngày kết thúc:</td>
+            <td>${arriveDate}</td>
+        </tr>
+        <tr>
+            <td>Thành phố/tỉnh đã đến trong 14 ngày qua:</td>
+            <td>${cityArrived}</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ:</td>
+            <td>${address}</td>
+        </tr>
+        <tr>
+            <td>Phường/Xã:</td>
+            <td>${ward}</td>
+            <td>Quận/Huyện: </td>
+            <td>${district}</td>
+            <td>Tỉnh/Thành: </td>
+            <td>${city}</td>
+        </tr>
+        <tr>
+            <td>Điện thoại:</td>
+            <td>${phoneNumber}</td>
+            <td>Email: </td>
+            <td>${email}</td>
+        </tr>
+        <tr>
+            <td>Triệu chứng trong 14 ngày qua: </td>
+            <td>${symptom}</td>
+        </tr>
+        <tr>
+            <td>Lịch sử phơi nhiễm</td>
+        </tr>
+        <tr>
+            <td>Đến trang trại chăn nuôi/chợ buôn bán động vật/ cơ sở giết mổ/ tiếp xúc động vật</td>
+            <td>${exposureNo1}</td>
+        </tr>
+        <tr>
+            <td>Tiếp xúc gần (<2m) với người mắc bệnh do nCoV</td>
+            <td>${exposureNo2}</td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>
