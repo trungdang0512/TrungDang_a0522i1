@@ -39,7 +39,7 @@ public class MailController {
         mailService.save(mail);
         Mail newMail = mailService.display();
         ModelAndView modelAndView = new ModelAndView("/mail");
-        modelAndView.addObject("newMai", newMail);
+        modelAndView.addObject("currentMail", newMail);
         return modelAndView;
     }
 }

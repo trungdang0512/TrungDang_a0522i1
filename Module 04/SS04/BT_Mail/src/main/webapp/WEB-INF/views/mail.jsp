@@ -16,19 +16,19 @@
 <table border="1">
     <tr>
         <td>Language: </td>
-        <td>${language}</td>
+        <td>${currentMail.language}</td>
     </tr>
     <tr>
         <td>Page size: </td>
-        <td>${pageSize}</td>
+        <td>${currentMail.pageSize}</td>
     </tr>
     <tr>
         <td>Spams filter: </td>
-        <td>${enableSpam}</td>
+        <td>${currentMail.enableSpam}</td>
     </tr>
     <tr>
         <td>Signature: </td>
-        <td>${signature}</td>
+        <td>${currentMail.signature}</td>
     </tr>
 </table>
 </body>

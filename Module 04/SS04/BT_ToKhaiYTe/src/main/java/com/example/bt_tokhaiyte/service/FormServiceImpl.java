@@ -15,4 +15,5 @@ public class FormServiceImpl implements IFormService{
     public CovidForm displayForm() {
         return covidForm;
     }
+
 }

@@ -44,12 +44,12 @@ public class FormController {
     public ModelAndView showForm(){
         CovidForm form = formService.displayForm();
         ModelAndView modelAndView = new ModelAndView("/update");
-        modelAndView.addObject("form", form);
+        modelAndView.addObject("covidForm", form);
         return modelAndView;
     }
 
     @PostMapping("/update")
-    public ModelAndView editForm(@ModelAttribute("newForm") CovidForm newForm){
+    public ModelAndView editForm(@ModelAttribute("covidForm") CovidForm newForm){
         formService.updateForm(newForm);
         newForm = formService.displayForm();
         ModelAndView modelAndView = new ModelAndView("/form");

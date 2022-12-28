@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Products Management</title>
+</head>
+<body>
+  <h3>Products List</h3>
+  <p><a th:href="@{/create}">Add new product</a></p>
+  <div class="notify">
+    <div th:if="${success}">
+      <span th:text="${success}"></span>
+    </div>
+  </div>
+    <table id= "product">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Producer</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product,productStat : ${products}">
+                <td th:text="${product.getId()}"></td>
+                <td th:text="${product.getName()}"></td>
+                <td th:text="${product.getPrice()}"></td>
+                <td th:text="${product.getDescription()}"></td>
+                <td th:text="${product.getProducer()}"></td>
+                <td><a th:href="@{/{id}/edit(id=${product.getId()})}">Edit</a> </td>
+                <td><a th:href="@{/{id}/delete(id=${product.getId()})}">Delete</a></td>
+                <td><a th:href="@{/{id}/view(id=${product.getId()})}">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+  <footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
