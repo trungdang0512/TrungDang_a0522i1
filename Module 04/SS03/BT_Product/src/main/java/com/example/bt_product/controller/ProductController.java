@@ -5,9 +5,8 @@ import com.example.bt_product.service.IProductService;
 import com.example.bt_product.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -59,5 +58,21 @@ public class ProductController {
     public String deleteProduct(@PathVariable int id){
         productService.remove(id);
         return "redirect:/product";
+    }
+
+    @GetMapping("/find/{id}")
+    public String findProductByName(Model model, @RequestParam("name") String name){
+//        Product findProduct = productService.findByName(name);
+//        ModelAndView modelAndView = new ModelAndView("/product");
+//        modelAndView.addObject("findProduct", findProduct);
+//        modelAndView.addObject("name", name);
+        if (name.isEmpty()){
+            model.addAttribute("product",productService.findAll());
+        }else{
+            Product find =  productService.findByName(name);
+            System.out.println(find.toString());
+            model.addAttribute("products",find);
+        }
+        return "/product";
     }
 }

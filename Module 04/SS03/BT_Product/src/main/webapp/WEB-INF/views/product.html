@@ -7,6 +7,11 @@
 <body>
   <h3>Products List</h3>
   <p><a th:href="@{/create}">Add new product</a></p>
+  <div style="float: right">
+      <form th:action="@{/find/{name}}" method="get" novalidate="novalidate">
+          <label>Search Product By Name</label><input type="text" th:name="name"/><input type="submit" value="Search">
+      </form>
+  </div>
   <div class="notify">
     <div th:if="${success}">
       <span th:text="${success}"></span>
