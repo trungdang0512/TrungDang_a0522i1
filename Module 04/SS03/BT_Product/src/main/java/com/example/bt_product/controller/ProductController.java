@@ -2,22 +2,22 @@ package com.example.bt_product.controller;
 
 import com.example.bt_product.model.Product;
 import com.example.bt_product.service.IProductService;
-import com.example.bt_product.service.ProductService;
+import com.example.bt_product.service.ProductServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
 public class ProductController {
-    IProductService productService = new ProductService();
+    @Autowired
+    private IProductService productService;
 
     @GetMapping("/product")
-    public String index(Model model){
-        List<Product> products = productService.findAll();
-        model.addAttribute("products", products);
+    public String getList(Model model){
+        model.addAttribute("products", productService.findAll());
         return "/product";
     }
 
@@ -29,7 +29,6 @@ public class ProductController {
 
     @PostMapping("/save")
     public String saveProduct(Product product){
-        product.setId((int) (Math.random()*10000));
         productService.save(product);
         return "redirect:/product";
     }
@@ -50,7 +49,7 @@ public class ProductController {
 
     @PostMapping("/update")
     public String updateProduct(Product product){
-        productService.update(product.getId(),product);
+        productService.update(product);
         return "redirect:/product";
     }
 
@@ -67,10 +66,9 @@ public class ProductController {
 //        modelAndView.addObject("findProduct", findProduct);
 //        modelAndView.addObject("name", name);
         if (name.isEmpty()){
-            model.addAttribute("product",productService.findAll());
+            model.addAttribute("products",productService.findAll());
         }else{
-            Product find =  productService.findByName(name);
-            System.out.println(find.toString());
+            List<Product> find =  productService.findByName(name);
             model.addAttribute("products",find);
         }
         return "/product";

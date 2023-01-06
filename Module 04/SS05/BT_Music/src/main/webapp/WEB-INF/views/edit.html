@@ -2,29 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head th:replace="/layout :: head">
     <meta charset="UTF-8">
-    <title>Edit Product</title>
+    <title>Edit Song</title>
 </head>
 <body>
-  <h3>Add New Product</h3>
-  <p><a th:href="@{/product}">Back to Products List</a></p>
+  <h3>Edit Song Info</h3>
+  <p><a th:href="@{/music}">Back to Song List</a></p>
   <div id="form">
-    <form th:action="@{/update}" th:object="${product}" method="post">
+    <form th:action="@{/update}" th:object="${music}" method="post">
       <input type="hidden" th:field="*{id}"/>
       <div>
-        <label>Product Name</label>
+        <label>Song Name</label>
         <input type="text" th:field="*{name}"/>
       </div>
       <div>
-        <label>Price</label><br>
-        <input type="number" th:field="*{price}"/>
+        <label>Artist</label><br>
+        <input type="text" th:field="*{artist}"/>
       </div>
       <div>
-        <label>Description</label>
-        <textarea th:field="*{description}"></textarea>
+        <label>Type of Song</label>
+        <input type="text" th:field="*{type}"/>
       </div>
       <div>
-        <label>Producer</label>
-        <input type="text" th:field="*{producer}"/>
+        <label>Link</label>
+        <input type="text" th:field="*{link}"/>
       </div>
       <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
     </form>

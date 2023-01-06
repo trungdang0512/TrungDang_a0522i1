@@ -1,4 +1,4 @@
-package com.example.bt_product.configuration;
+package com.example.bt_music.configuration;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -11,12 +11,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
-
 import org.thymeleaf.templatemode.TemplateMode;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.example.bt_product")
+@ComponentScan("com.example.bt_music")
 public class AppConfiguration implements WebMvcConfigurer,  ApplicationContextAware {
 
     private ApplicationContext applicationContext;

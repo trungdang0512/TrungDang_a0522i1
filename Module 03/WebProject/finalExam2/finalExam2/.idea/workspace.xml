@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0411e9ae-009e-4f80-b5cf-c6fb9b7c7de6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/configuration/AppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/configuration/AppInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/spring-customer-management-thymleaf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/spring-customer-management-thymleaf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Jp90jDnSuVUVFppYlAy5FvLBPX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/TrungDang_a0522i1/Module 03/WebProject/finalExam2/finalExam2&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0411e9ae-009e-4f80-b5cf-c6fb9b7c7de6" name="Changes" comment="" />
+      <created>1672763937252</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672763937252</updated>
+      <workItem from="1672763938999" duration="34000" />
+      <workItem from="1672834933736" duration="40000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
