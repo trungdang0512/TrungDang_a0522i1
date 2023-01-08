@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<center>
+    <p><a th:href="@{/blog}">Back to Category</a></p>
+    <div id="form">
+        <h2 th:text="${blog.title}"></h2>
+        <label>Author: </label> <p th:text="${blog.author}"></p>
+        <label>Tag: </label><p th:text="${blog.tag}"></p>
+        <div><p th:text="${blog.content}" style="text-align: left"/></div>
+    </div>
+
+    <footer th:replace="/layout :: footer"></footer>
+</center>
+</body>
+</html>

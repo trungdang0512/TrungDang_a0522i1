@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Blog Management</title>
+</head>
+<body>
+<center>
+  <h3>Blog List</h3>
+  <p><a th:href="@{/add}">Add new Blog</a></p>
+<!--  <div style="float: right">-->
+<!--      <form th:action="@{/find/{name}}" method="get" novalidate="novalidate">-->
+<!--          <label>Search Product By Name</label><input type="text" th:name="name"/><input type="submit" value="Search">-->
+<!--      </form>-->
+<!--  </div>-->
+<!--  <div class="notify">-->
+<!--    <div th:if="${success}">-->
+<!--      <span th:text="${success}"></span>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--    <p style="color: blue">${msg}</p>-->
+    <table id= "product">
+        <thead>
+            <tr>
+                <th>Tittle</th>
+                <th>Author</th>
+                <th>Tag</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="blog,blogStat : ${bloglist}">
+                <td th:text="${blog.getTitle()}"></td>
+                <td th:text="${blog.getAuthor()}"></td>
+                <td th:text="${blog.getTag()}"></td>
+                <td><a th:href="@{/{id}/edit(id=${blog.getId()})}">Edit</a> </td>
+                <td><a th:href="@{/{id}/delete(id=${blog.getId()})}">Delete</a></td>
+                <td><a th:href="@{/{id}/view(id=${blog.getId()})}">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+  <footer th:replace="/layout :: footer"></footer>
+</center>
+</body>
+</html>

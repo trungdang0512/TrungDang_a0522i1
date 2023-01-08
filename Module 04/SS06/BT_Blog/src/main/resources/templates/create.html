@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="/layout :: head">
+  <meta charset="UTF-8">
+  <title>Add New Blog</title>
+</head>
+<body>
+<center>
+  <h3>Add New Blog</h3>
+  <p><a th:href="@{/blog}">Back to Category</a></p>
+  <div id="form">
+    <form th:action="@{/save}" th:object="${newblog}" method="post" novalidate="novalidate">
+      <input type="hidden" th:field="*{id}"/>
+      <div>
+        <label>Title</label>
+        <input type="text" th:field="*{title}"/>
+      </div>
+      <div>
+        <label>Tag</label>
+        <input type="text" th:field="*{tag}"/>
+      </div>
+      <div>
+        <label>Author</label>
+        <input type="text" th:field="*{author}"/>
+      </div>
+      <div>
+        <label>Content</label><br>
+        <textarea th:field="*{content}" rows="20"></textarea>
+      </div>
+        <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
+    </form>
+  </div>
+  <footer th:replace="/layout :: footer"></footer>
+</center>
+</body>
+</html>
