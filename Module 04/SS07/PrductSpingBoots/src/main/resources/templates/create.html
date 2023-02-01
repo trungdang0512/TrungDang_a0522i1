@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="/layout :: head">
+  <meta charset="UTF-8">
+  <title>Add New Product</title>
+</head>
+<body>
+  <h3>Add New Product</h3>
+  <p><a th:href="@{/product}">Back to Products List</a></p>
+  <p><a th:href="@{/newcategory}">Add Category</a></p>
+  <div id="form">
+    <form th:action="@{/save}" th:object="${product}" method="post" novalidate="novalidate">
+      <input type="hidden" th:field="*{id}"/>
+      <div>
+        <label>Product Name</label>
+        <input type="text" th:field="*{name}"/>
+      </div>
+      <div>
+      <label>Category</label><br>
+      <select th:field="*{category}">
+        <option value="">--Please select category--</option>
+        <option th:each="category: ${categoryList}" th:text="${category.category}" th:value="${category.id}"></option>
+      </select><br>
+      </div><br>
+      <div>
+        <label>Price</label><br>
+        <input type="number" th:field="*{price}"/>
+      </div>
+      <div>
+        <label>Description</label>
+        <input type="text" th:field="*{description}"></input>
+      </div>
+      <div>
+        <label>Producer</label>
+        <input type="text" th:field="*{producer}"/>
+      </div>
+        <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
+    </form>
+  </div>
+  <footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

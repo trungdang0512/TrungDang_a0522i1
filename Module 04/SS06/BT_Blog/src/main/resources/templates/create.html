@@ -14,15 +14,21 @@
       <div>
         <label>Title</label>
         <input type="text" th:field="*{title}"/>
-      </div>
+      </div><br>
       <div>
-        <label>Tag</label>
-        <input type="text" th:field="*{tag}"/>
-      </div>
+        <label>Category</label><br>
+        <select th:field="*{category}">
+          <option value="">--Please select category--</option>
+          <option th:each="category: ${categorylist}" th:text="${category.category}" th:value="${category.id}"></option>
+        </select><br>
+      </div><br>
       <div>
-        <label>Author</label>
-        <input type="text" th:field="*{author}"/>
-      </div>
+        <label>Author</label> <br>
+        <select th:field="*{author}">
+          <option value="">--Please select author--</option>
+          <option th:each="author: ${authorlist}" th:text="${author.author}" th:value="${author.id}"></option>
+        </select><br>
+      </div><br>
       <div>
         <label>Content</label><br>
         <textarea th:field="*{content}" rows="20"></textarea>

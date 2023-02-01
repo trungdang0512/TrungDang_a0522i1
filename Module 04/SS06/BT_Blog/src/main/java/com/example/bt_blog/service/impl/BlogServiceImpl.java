@@ -6,6 +6,8 @@ import com.example.bt_blog.repository.IBlogRepository;
 import com.example.bt_blog.service.IBlogService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -28,6 +30,11 @@ public class BlogServiceImpl implements IBlogService {
     }
 
     @Override
+    public Page<Blog> getAllWithPage(PageRequest pageRequest) {
+        return iBlogRepository.findAllWithPage(pageRequest);
+    }
+
+    @Override
     public void save(Blog blog) {
         this.iBlogRepository.save(blog);
     }
@@ -39,7 +46,7 @@ public class BlogServiceImpl implements IBlogService {
 
     @Override
     public void update(Blog blog) {
-        iBlogRepository.updateTitleAndAuthorAndTagAndContentBy(blog.getTitle(),blog.getAuthor(),blog.getTag(), blog.getContent());
+        iBlogRepository.save(blog);
     }
 
     @Override

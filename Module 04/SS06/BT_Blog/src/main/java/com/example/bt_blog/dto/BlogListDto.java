@@ -1,21 +1,24 @@
 package com.example.bt_blog.dto;
 
+import com.example.bt_blog.model.Author;
+import com.example.bt_blog.model.Category;
+
 public class BlogListDto {
     private Integer id;
     private String title;
-    private String author;
     private String content;
-    private String tag;
+    private Category category;
+    private Author author;
 
     public BlogListDto() {
     }
 
-    public BlogListDto(Integer id, String title, String author, String content, String tag) {
+    public BlogListDto(Integer id, String title, String content, Category category, Author author) {
         this.id = id;
         this.title = title;
-        this.author = author;
         this.content = content;
-        this.tag = tag;
+        this.category = category;
+        this.author = author;
     }
 
     public Integer getId() {
@@ -34,14 +37,6 @@ public class BlogListDto {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public String getContent() {
         return content;
     }
@@ -50,11 +45,19 @@ public class BlogListDto {
         this.content = content;
     }
 
-    public String getTag() {
-        return tag;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

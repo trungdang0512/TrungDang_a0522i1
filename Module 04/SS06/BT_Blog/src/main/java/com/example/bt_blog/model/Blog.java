@@ -1,6 +1,7 @@
 package com.example.bt_blog.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity(name = "blog")
 public class Blog {
@@ -10,20 +11,24 @@ public class Blog {
     private Integer id;
     @Column(name = "title")
     private String title;
-    private String author;
     @Column(length = 10000)
     private String content;
-    private String tag;
+    @ManyToOne
+    @JoinColumn(name = "id_category")
+    private Category category;
 
+    @ManyToOne
+    @JoinColumn(name = "id_author")
+    private Author author;
     public Blog() {
     }
 
-    public Blog(Integer id, String title, String author, String content, String tag) {
+    public Blog(Integer id, String title, String content, Category category, Author author) {
         this.id = id;
         this.title = title;
-        this.author = author;
         this.content = content;
-        this.tag = tag;
+        this.category = category;
+        this.author = author;
     }
 
     public Integer getId() {
@@ -34,12 +39,12 @@ public class Blog {
         this.id = id;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getTitle() {
+        return title;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
@@ -50,19 +55,19 @@ public class Blog {
         this.content = content;
     }
 
-    public String getTag() {
-        return tag;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public String getTitle() {
-        return title;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

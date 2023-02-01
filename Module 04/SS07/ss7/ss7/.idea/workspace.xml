@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51c0bb2c-2fe2-4630-9e99-8184732fda23" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../SS03/spring-customer-management-thymleaf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS03/spring-customer-management-thymleaf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/dto/BlogListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/dto/BlogListDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/repository/IBlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/view.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2KGo8FE68eOgxv6ELyYuCrl5sBC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/TrungDang_a0522i1/Module 04/SS07/ss7/ss7&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51c0bb2c-2fe2-4630-9e99-8184732fda23" name="Changes" comment="" />
+      <created>1673610119156</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673610119156</updated>
+      <workItem from="1673610120987" duration="20000" />
+      <workItem from="1675253072824" duration="24000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

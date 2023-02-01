@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Products Management</title>
+</head>
+<body>
+  <h3>Products List</h3>
+  <p><a th:href="@{/create}">Add new product</a></p>
+<!--  <div style="float: right">-->
+<!--      <form th:action="@{/find/{name}}" method="get" novalidate="novalidate">-->
+<!--          <label>Search Product By Name</label><input type="text" th:name="name"/><input type="submit" value="Search">-->
+<!--      </form>-->
+<!--  </div>-->
+  <div class="notify">
+      <div th:if="${success}">
+          <span th:text="${success}"></span>
+      </div>
+  </div>
+  <p style="color: blue" th:text="${msg}"></p>
+    <table id= "product">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Producer</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product,productStat : ${productList}">
+                <td th:text="${product.getName()}"></td>
+                <td th:text="${product.getCategory().category}"></td>
+                <td th:text="${product.getPrice()}"></td>
+                <td th:text="${product.getDescription()}"></td>
+                <td th:text="${product.getProducer()}"></td>
+                <td><a th:href="@{/{id}/edit(id=${product.getId()})}">Edit</a> </td>
+                <td><a th:href="@{/{id}/delete(id=${product.getId()})}">Delete</a></td>
+                <td><a th:href="@{/{id}/view(id=${product.getId()})}">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+  <div>
+        <span>
+            <a th:if="${productList.hasPrevious()}" th:href="@{/product(page = ${productList.number - 1})}">Previous</a>
+        </span>
+      <span th:each="pageNo: ${#numbers.sequence(0,productList.totalPages - 1)}">
+            <a th:href="@{/product(page = ${pageNo})}" th:text="${pageNo}"></a>
+        </span>
+      <span>
+            <a th:if="${productList.hasNext()}" th:href="@{/product(page = ${productList.number + 1})}">Next</a>
+        </span>
+  </div>
+  <footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

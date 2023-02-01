@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+<body>
+  <h3>Edit Product</h3>
+  <p><a th:href="@{/product}">Back to Products List</a></p>
+  <div id="form">
+    <form th:action="@{/update}" th:object="${product}" method="post">
+      <input type="hidden" th:field="*{id}"/>
+      <div>
+        <label>Product Name</label>
+        <input type="text" th:field="*{name}"/>
+      </div>
+      <div>
+        <label>Category</label><br>
+        <select th:field="*{category}">
+          <option th:text="${product.category.category}" th:value="${product.category.id}"></option>
+          <option th:each="category: ${categoryList}" th:text="${category.category}" th:value="${category.id}"></option>
+        </select><br>
+      </div>
+      <div>
+        <label>Price</label><br>
+        <input type="number" th:field="*{price}"/>
+      </div>
+      <div>
+        <label>Description</label>
+        <input type="text" th:field="*{description}"></input>
+      </div>
+      <div>
+        <label>Producer</label>
+        <input type="text" th:field="*{producer}"/>
+      </div>
+      <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
+    </form>
+  </div>
+  <footer th:replace="/layout :: footer"></footer>
+
+</body>
+</html>
