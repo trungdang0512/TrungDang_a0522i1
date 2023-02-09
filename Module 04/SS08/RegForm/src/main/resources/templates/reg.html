@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/submit" method="post" th:object="${newReg}">
+        <input type="hidden" th:field="*{id}"/>
+        <label>First Name</label>
+        <input type="text" th:field="*{firstName}"/><br>
+        <p style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+        <label>Last Name</label>
+        <input type="text" th:field="*{lastName}"/><br>
+        <p style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+        <label>Phone</label>
+        <input type="text" th:field="*{phone}"/><br>
+        <p style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+        <label>Age</label>
+        <input type="text" th:field="*{age}"/><br>
+        <p style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+        <label>Email</label>
+        <input type="text" th:field="*{email}"/><br>
+        <p style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        <button type="submit">Create</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

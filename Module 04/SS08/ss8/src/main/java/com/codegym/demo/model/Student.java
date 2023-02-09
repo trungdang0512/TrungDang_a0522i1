@@ -87,6 +87,5 @@ public class Student implements Validator {
         if(!student.nameStudent.matches("^[A-Za-z ]{4,}$")) {
             errors.rejectValue("nameStudent", "", "Tên sai định dạng");
         }
-
     }
 }

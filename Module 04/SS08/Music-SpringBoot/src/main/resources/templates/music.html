@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Music Management</title>
+</head>
+<body>
+  <h3>Music List</h3>
+  <p><a th:href="@{/create}">Add new Song</a></p>
+<!--  <div style="float: right">-->
+<!--      <form th:action="@{/find/{name}}" method="get" novalidate="novalidate">-->
+<!--          <label>Search Music By Name</label><input type="text" th:name="name"/><input type="submit" value="Search">-->
+<!--      </form>-->
+<!--  </div>-->
+<!--  <div class="notify">-->
+<!--    <div th:if="${success}">-->
+<!--      <span th:text="${success}"></span>-->
+<!--    </div>-->
+<!--  </div>-->
+    <table id= "product">
+        <thead>
+            <tr>
+                <th>Song Name</th>
+                <th>Artist</th>
+                <th>Type</th>
+                <th>Link</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="music,musicStat : ${musics}">
+                <td th:text="${music.getName()}"></td>
+                <td th:text="${music.getArtist()}"></td>
+                <td th:text="${music.getType()}"></td>
+                <td><a th:href="${music.getLink()}" target="_blank">Link</a></td>
+                <td><a th:href="@{/{id}/edit(id=${music.getId()})}">Edit</a> </td>
+                <td><a th:href="@{/{id}/delete(id=${music.getId()})}">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+  <footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
