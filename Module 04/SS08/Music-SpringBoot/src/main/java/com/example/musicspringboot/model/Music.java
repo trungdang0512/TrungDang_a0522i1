@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Music {
@@ -11,19 +12,23 @@ public class Music {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
     @Column(name= "name")
     @NotBlank
-    @Max(value = 800, message = "Không vượt quá 800 ký tự")
-    @Pattern(regexp = "r'^[a-zA-Z0-9]*$'",message = "Không chứa ký tự đặc biệt")
+    @Size(max = 800, message = "Không vượt quá 800 ký tự")
+    @Pattern(regexp = "^[a-zA-Z0-9\\\\s]*$",message = "Tên bài hát không đúng định dạng")
     private String name;
+
     @NotBlank
-    @Max(value = 300, message = "Không vượt quá 300 ký tự")
-    @Pattern(regexp = "r'^[a-zA-Z0-9]*$'",message = "Không chứa ký tự đặc biệt")
+    @Size(max = 300, message = "Không vượt quá 300 ký tự")
+    @Pattern(regexp = "^[a-zA-Z0-9\\\\s]*$",message = "Tên ca sĩ không đúng định dạng")
     private String artist;
+
     @NotBlank
-    @Max(value = 1000, message = "Không vượt quá 1000 ký tự")
-    @Pattern(regexp = "r'^[a-zA-Z,]*$'",message = "Không chứa ký tự đặc biệt")
+    @Size(max = 1000, message = "Không vượt quá 1000 ký tự")
+    @Pattern(regexp = "^[a-zA-Z0-9\\\\,]*$",message = "Không được chứa ký tự đặc biệt")
     private String type;
+
     private String link;
 
     public Integer getId() {

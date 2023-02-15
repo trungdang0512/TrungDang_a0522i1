@@ -1,6 +1,7 @@
 package com.example.prductspingboots.productspringboots.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity(name = "product")
 public class Product {
@@ -10,15 +11,24 @@ public class Product {
     private Long id;
 
     @Column(name = "name")
+    @NotEmpty
+//    @Min(value = 3, message = "Minimum 3 characters!!!")
+    @Size(max = 50,message = "Maximum 50 characters!!!")
     private String name;
 
     @Column(name = "price")
+    @Min(value = 0, message = "Only Positive Number accepted")
+//    @Pattern(regexp = "^\\d+$", message = "Only Positive Number accepted")
     private Double price;
 
     @Column(name = "description", length = 1000)
+    @NotEmpty
+    @Size(max = 1000, message = "The text length is not valid!!! Only accept 0-1000 characters")
     private String description;
 
     @Column(name = "producer")
+    @NotEmpty
+    @Size(max = 50,message = "The text length is not valid!!! Only accept 0-50 characters")
     private String producer;
 
     @ManyToOne

@@ -6,7 +6,7 @@
 </head>
 <body>
   <h3>Add New Song</h3>
-  <p><a th:href="@{/product}">Back to Song List</a></p>
+  <p><a th:href="@{/music}">Back to Song List</a></p>
   <div id="form">
     <form th:action="@{/save}" th:object="${music}" method="post">
       <input type="hidden" th:field="*{id}"/>

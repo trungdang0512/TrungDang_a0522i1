@@ -13,7 +13,8 @@
       <input type="hidden" th:field="*{id}"/>
       <div>
         <label>Product Name</label>
-        <input type="text" th:field="*{name}"/>
+        <input type="text" th:field="*{name}" />
+        <p style="color: red; font-size: smaller" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
       </div>
       <div>
       <label>Category</label><br>
@@ -25,14 +26,17 @@
       <div>
         <label>Price</label><br>
         <input type="number" th:field="*{price}"/>
+        <p style="color: red; font-size: smaller" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
       </div>
       <div>
         <label>Description</label>
         <input type="text" th:field="*{description}"></input>
+        <p style="color: red; font-size: smaller" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
       </div>
       <div>
         <label>Producer</label>
         <input type="text" th:field="*{producer}"/>
+        <p style="color: red; font-size: smaller" th:if="${#fields.hasErrors('producer')}" th:errors="*{producer}"></p>
       </div>
         <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
     </form>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Book Management</title>
+</head>
+<body>
+  <h3>Book Store</h3>
+  <p><a th:href="@{/create}">Add new Book</a></p>
+<!--  <div style="float: right">-->
+<!--      <form th:action="@{/pay}" method="post" novalidate="novalidate">-->
+<!--          <label>Enter Book code to pay</label><input type="text" th:name="code"/><input type="submit" value="Search">-->
+<!--      </form>-->
+<!--  </div>-->
+  <div class="notify">
+      <span th:text="${mess01}"></span>
+      <span th:text="${mess02}"></span>
+  </div>
+    <table id= "product">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Amount</th>
+                <th>Borrow</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book,bookStat : ${books}">
+                <td th:text="${book.getTitle()}"></td>
+                <td th:text="${book.getAuthor()}"></td>
+                <td th:text="${book.getAmount()}"></td>
+                <td><a th:href="@{/{id}/borrow(id=${book.getId()})}">Borrow</a> </td>
+                <td><a th:href="@{/{id}/pay(id=${book.getId()})}">Return</a> </td>
+            </tr>
+        </tbody>
+    </table>
+  <footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

@@ -4,6 +4,7 @@ import com.example.prductspingboots.productspringboots.model.Category;
 
 public class ProductListDto {
     private Long id;
+
     private String name;
     private Double price;
     private String description;

@@ -9,8 +9,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.validation.Valid;
 
 @Controller
 public class ProductController {
@@ -34,7 +37,15 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public String createProduct(@ModelAttribute("product")Product product, RedirectAttributes redirectAttributes){
+    public String createProduct(@Valid @ModelAttribute("product")Product product,
+                                BindingResult bindingResult,
+                                RedirectAttributes redirectAttributes,
+                                Model model){
+        if (bindingResult.hasErrors()){
+//            model.addAttribute("product", product);
+            model.addAttribute("categoryList", categoryService.findAll());
+            return "create";
+        }
         this.productService.save(product);
         redirectAttributes.addFlashAttribute("msg", "Saving Successfully!!!");
         return "redirect:/product";
@@ -48,7 +59,15 @@ public class ProductController {
     }
 
     @PostMapping("/update")
-    public String updateProduct(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes){
+    public String updateProduct(@Valid @ModelAttribute("product")Product product,
+                                RedirectAttributes redirectAttributes,
+                                BindingResult bindingResult,
+                                Model model){
+        if (bindingResult.hasErrors()){
+            model.addAttribute("product", new Product());
+            model.addAttribute("categoryList", categoryService.findAll());
+            return "edit";
+        }
         this.productService.save(product);
         redirectAttributes.addFlashAttribute("msg", "Editing Successfully!!!");
         return "redirect:/product";
