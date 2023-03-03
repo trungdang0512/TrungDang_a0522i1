@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="/layout :: head">
+  <meta charset="UTF-8">
+  <title>Add New Blog</title>
+</head>
+<body>
+<center>
+  <h3>Add New Blog</h3>
+  <p><a th:href="@{/blog}">Back to Category</a></p>
+  <div id="form">
+    <form th:action="@{/save}" th:object="${newblog}" method="post" novalidate="novalidate">
+      <input type="hidden" th:field="*{id}"/>
+      <div>
+        <label>Title</label>
+        <input type="text" th:field="*{title}"/>
+      </div><br>
+      <div>
+        <label>Category</label><br>
+        <select th:field="*{category}">
+          <option value="">--Please select category--</option>
+          <option th:each="category: ${categorylist}" th:text="${category.category}" th:value="${category.id}"></option>
+        </select><br>
+      </div><br>
+      <div>
+        <label>Author</label> <br>
+        <select th:field="*{author}">
+          <option value="">--Please select author--</option>
+          <option th:each="author: ${authorlist}" th:text="${author.author}" th:value="${author.id}"></option>
+        </select><br>
+      </div><br>
+      <div>
+        <label>Content</label><br>
+        <textarea th:field="*{content}" rows="20"></textarea>
+      </div>
+        <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
+    </form>
+  </div>
+  <footer th:replace="/layout :: footer"></footer>
+</center>
+</body>
+</html>

@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="51c0bb2c-2fe2-4630-9e99-8184732fda23" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../../SS03/spring-customer-management-thymleaf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS03/spring-customer-management-thymleaf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/dto/BlogListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/dto/BlogListDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/model/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/repository/IBlogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/IBlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/java/com/example/bt_blog/service/impl/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/BT_Blog/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/ss6/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/ss6/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS06/ss6/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS06/ss6/.idea/jpa-buddy.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +38,7 @@
       <updated>1673610119156</updated>
       <workItem from="1673610120987" duration="20000" />
       <workItem from="1675253072824" duration="24000" />
+      <workItem from="1677676513449" duration="5000" />
     </task>
     <servers />
   </component>

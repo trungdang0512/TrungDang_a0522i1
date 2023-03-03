@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+<body>
+<center>
+  <h3>Edit the Blog</h3>
+  <p><a th:href="@{/blog}">Back to Category</a></p>
+  <div id="form">
+    <form th:action="@{/update}" th:object="${blog}" method="post">
+      <input type="hidden" th:field="*{id}"/>
+      <div>
+        <label>Title</label>
+        <input type="text" th:field="*{title}"/>
+      </div>
+      <div>
+        <label>Category</label><br>
+        <select th:field="*{category}">
+          <option th:text="${blog.category.category}" th:value="${blog.category.id}"></option>
+          <option th:each="category: ${categorylist}" th:text="${category.category}" th:value="${category.id}"></option>
+        </select><br>
+      </div>
+      <div>
+        <label>Author</label><br>
+        <select th:field="*{author}">
+          <option th:text="${blog.author.author}" th:value="${blog.author.id}"></option>
+          <option th:each="author: ${authorlist}" th:text="${author.author}" th:value="${author.id}"></option>
+        </select><br>
+      </div>
+      <div>
+        <label>Content</label><br>
+        <textarea th:field="*{content}" rows="30"></textarea>
+      </div>
+      <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
+    </form>
+  </div>
+  <footer th:replace="/layout :: footer"></footer>
+</center>
+</body>
+</html>

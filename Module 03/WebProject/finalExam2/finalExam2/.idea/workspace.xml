@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0411e9ae-009e-4f80-b5cf-c6fb9b7c7de6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/configuration/AppConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/configuration/AppInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/BT_Product/src/main/java/com/example/bt_product/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS03/spring-customer-management-thymleaf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS03/spring-customer-management-thymleaf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS06/ss6/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS06/ss6/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS06/ss6/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS06/ss6/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 04/SS07/ss7/ss7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 04/SS07/ss7/ss7/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +51,7 @@
       <updated>1672763937252</updated>
       <workItem from="1672763938999" duration="34000" />
       <workItem from="1672834933736" duration="40000" />
+      <workItem from="1677689258879" duration="880000" />
     </task>
     <servers />
   </component>

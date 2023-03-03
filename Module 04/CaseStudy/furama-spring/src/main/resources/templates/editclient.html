@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Edit</title>
+
+    <th:block th:replace="~{layout::top-bootstrap}"></th:block>
+
+</head>
+<body>
+<th:block th:replace="~{layout::navbar}"></th:block>
+
+<h3>Edit Customer</h3>
+<p><a th:href="@{/client}">Back to Customer Page</a></p>
+<div id="form">
+    <form th:action="@{/updateclient}" th:object="${client}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <center>
+            <table style="text-align: left">
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input type="text" th:field="*{name}"/></td>
+                </tr>
+                <tr>
+                    <td><label>Date Of Birth</label></td>
+                    <td><input th:field="*{dateOfBirth}" type="date"></input></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td><select th:field="*{gender}">
+                        <option value="">--Please select --</option>
+                        <option th:each="gender: ${listGender}" th:text="${gender}" th:value="${gender}"></option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label>ID number</label></td>
+                    <td><input th:field="*{idNumber}" type="text"></input></td>
+                </tr>
+                <tr>
+                    <td><label>Phone Number</label></td>
+                    <td><input th:field="*{phoneNumber}" type="text"></input></td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input th:field="*{email}" type="text"></input></td>
+                </tr>
+                <tr>
+                    <td><label>Address</label></td>
+                    <td><input th:field="*{address}" type="text"></input></td>
+                </tr>
+                <tr>
+                    <td><label>Type</label></td>
+                    <td><select th:field="*{clientType}">
+                        <option value="">--Please select category--</option>
+                        <option th:each="type: ${typelist}" th:text="${type.type}" th:value="${type.id}"></option>
+                    </select></td>
+                </tr>
+            </table>
+        </center>
+        <center><input type="submit" value="Save"></center>
+    </form>
+</div>
+
+<th:block th:replace="~{layout::script}"></th:block>
+
+<th:block th:replace="~{layout::footer}"></th:block>
+</body>
+</html>
