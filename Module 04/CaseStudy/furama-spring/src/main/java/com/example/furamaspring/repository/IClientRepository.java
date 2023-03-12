@@ -13,4 +13,6 @@ public interface IClientRepository extends JpaRepository<Client, Long> {
     @Query(value = "select * from client", countQuery = "select * from client ", nativeQuery = true)
     Page<Client> findAllWithPage(PageRequest pageRequest);
 
+    Page<Client> findAllByNameLike(String name, PageRequest pageRequest);
+
 }
