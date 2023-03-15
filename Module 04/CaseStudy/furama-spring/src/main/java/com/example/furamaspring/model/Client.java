@@ -1,6 +1,8 @@
 package com.example.furamaspring.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity(name = "client")
 public class Client {
@@ -8,12 +10,24 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+//    @NotEmpty(message = "Không được để trống")
     private String name;
+
+//    @NotEmpty(message = "Không được để trống")
+//    @Pattern(regexp = "^(([1][9]([2-9][3-9]|[3-9][0-9]))|([2][0]{2}[0-4]+))[-|/]\\d{2}[-|/]\\d{2}$",message = "ngày sinh phải >= 18 tuổi ")
     private String dateOfBirth;
+//    @NotEmpty(message = "Không được để trống")
     private String gender;
+//    @NotEmpty(message = "Không được để trống")
+//    @Pattern(regexp = "[0-9]{9}",message = "Số chứng minh phải có 9 chữ số")
     private String idNumber;
+//    @NotEmpty(message = "Không được để trống")
+//    @Pattern(regexp = "(090|091|([(]84[)])\\+90|([(]84[)])\\+91)+[0-9]{7}",message = "Số điện thoại không đúng định dạng")
     private String phoneNumber;
+//    @NotEmpty(message = "Không được để trống")
+//    @Pattern(regexp = "^[a-zA-Z0-9]+@gmail.com$",message = "mail không đúng định dạng")
     private String email;
+//    @NotEmpty(message = "Không được để trống")
     private String address;
 
     @ManyToOne

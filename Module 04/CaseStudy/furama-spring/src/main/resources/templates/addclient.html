@@ -28,34 +28,41 @@
         <table style="text-align: left">
         <tr>
             <td><label>Name</label></td>
-            <td><input type="text" th:field="*{name}"/></td>
+            <td><input type="text" th:field="*{name}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p></td>
         </tr>
         <tr>
             <td><label>Date Of Birth</label></td>
-            <td><input th:field="*{dateOfBirth}" type="date"></input></td>
+            <td><input th:field="*{dateOfBirth}" type="date"></input>
+                <p style="color: red" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></p></td>
         </tr>
         <tr>
             <td><label>Gender</label></td>
             <td><select th:field="*{gender}">
                 <option value="">--Please select --</option>
                 <option th:each="gender: ${listGender}" th:text="${gender}" th:value="${gender}"></option>
+                <p style="color: red" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></p>
             </select></td>
         </tr>
         <tr>
             <td><label>ID number</label></td>
-            <td><input th:field="*{idNumber}" type="text"></input></td>
+            <td><input th:field="*{idNumber}" type="text"></input>
+                <p style="color: red" th:if="${#fields.hasErrors('idNumber')}" th:errors="*{idNumber}"></p></td>
         </tr>
         <tr>
             <td><label>Phone Number</label></td>
-            <td><input th:field="*{phoneNumber}" type="text"></input></td>
+            <td><input th:field="*{phoneNumber}" type="text"></input>
+                <p style="color: red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p></td>
         </tr>
         <tr>
             <td><label>Email</label></td>
-            <td><input th:field="*{email}" type="text"></input></td>
+            <td><input th:field="*{email}" type="text"></input>
+                <p style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p></td>
         </tr>
         <tr>
             <td><label>Address</label></td>
-            <td><input th:field="*{address}" type="text"></input></td>
+            <td><input th:field="*{address}" type="text"></input>
+                <p style="color: red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p></td>
         </tr>
         <tr>
             <td><label>Type</label></td>

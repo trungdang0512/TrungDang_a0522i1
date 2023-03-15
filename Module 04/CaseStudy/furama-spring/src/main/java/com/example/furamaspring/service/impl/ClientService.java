@@ -19,16 +19,8 @@ public class ClientService implements IClientService {
     private IClientRepository clientRepository;
 
     @Override
-    public List<ClientListDto> findAll() {
-        List<Client> clients = clientRepository.findAll();
-        List<ClientListDto> clientListDtos = new ArrayList<>();
-        ClientListDto clientListDto;
-        for (Client client: clients){
-            clientListDto = new ClientListDto();
-            BeanUtils.copyProperties(clients, clientListDto);
-            clientListDtos.add(clientListDto);
-        }
-        return clientListDtos;
+    public List<Client> findAll() {
+        return  clientRepository.findAll();
     }
 
     @Override
@@ -49,5 +41,10 @@ public class ClientService implements IClientService {
     @Override
     public void deleteById(Long id) {
         clientRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<Client> findAllByName(String name, PageRequest pageRequest) {
+        return clientRepository.findAllByNameLike("%" + name + "%",pageRequest);
     }
 }

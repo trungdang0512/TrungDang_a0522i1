@@ -1,25 +1,47 @@
 package com.example.furamaspring.dto;
 
 import com.example.furamaspring.model.ClientType;
+import com.example.furamaspring.repository.IClientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 public class ClientListDto {
+    @Autowired
+    private IClientRepository clientRepository;
 
     private Long id;
+
+    @NotEmpty(message = "Không được để trống")
     private String name;
+
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "^(([1][9]([2-9][3-9]|[3-9][0-9]))|([2][0]{2}[0-4]+))[-|/]\\d{2}[-|/]\\d{2}$",message = "ngày sinh phải >= 18 tuổi ")
     private String dateOfBirth;
+    @NotEmpty(message = "Không được để trống")
+
     private String gender;
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "[0-9]{9}",message = "Số chứng minh phải có 9 chữ số")
     private String idNumber;
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "(090|091|([(]84[)])\\+90|([(]84[)])\\+91)+[0-9]{7}",message = "Số điện thoại không đúng định dạng")
     private String phoneNumber;
+    @NotEmpty(message = "Không được để trống")
+    @Pattern(regexp = "^[a-zA-Z0-9]+@gmail.com$",message = "mail không đúng định dạng")
     private String email;
+    @NotEmpty(message = "Không được để trống")
     private String address;
+//    @NotEmpty(message = "Không được để trống")
     private ClientType clientType;
 
     public ClientListDto() {
     }
 
-    public ClientListDto(Long id, String name, String dateOfBirth, String gender, String idNumber, String phoneNumber, String email, String address, ClientType clientType) {
+    public ClientListDto(IClientRepository clientRepository, Long id, String name, String dateOfBirth, String gender, String idNumber, String phoneNumber, String email, String address, ClientType clientType) {
+        this.clientRepository = clientRepository;
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -29,6 +51,14 @@ public class ClientListDto {
         this.email = email;
         this.address = address;
         this.clientType = clientType;
+    }
+
+    public IClientRepository getClientRepository() {
+        return clientRepository;
+    }
+
+    public void setClientRepository(IClientRepository clientRepository) {
+        this.clientRepository = clientRepository;
     }
 
     public Long getId() {
