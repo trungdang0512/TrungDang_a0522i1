@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:fragment="top-bootstrap">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+<!--        <link rel="stylesheet" href="/bootstrap.min.css">-->
+        <script src="/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+        <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../assets/css/animate.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--  &lt;!&ndash;[if lt IE 9]>-->
+        <!--  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+        <!--  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+        <!--  <![endif]&ndash;&gt;-->
+
+        <!-- Favicon and touch icons -->
+<!--        <link rel="shortcut icon" href="assets/ico/favicon.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">-->
+<!--        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">-->
+<!--        <link rel="stylesheet"-->
+<!--              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+        <!-- Google Fonts -->
+
+        <!-- style -->
+        <style>
+
+            #product {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #product td, #product th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #product tr:nth-child(even){background-color: #f2f2f2;}
+
+            #product tr:hover {background-color: #ddd;}
+
+            #product th {
+                font-weight: normal;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #434343;
+                color: white;
+            }
+            body {
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                color: #888;
+                line-height: 30px;
+                text-align: center;
+            }
+
+            strong { font-weight: 500; }
+
+            a, a:hover, a:focus {
+                color: #468aa8; text-decoration: none;
+                -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+            }
+
+            h1, h2 { margin-top: 10px; font-family: 'Josefin Sans', sans-serif; font-size: 48px; font-weight: 300; color: #555; line-height: 56px; }
+            h3 { font-family: 'Josefin Sans', sans-serif; font-size: 32px; font-weight: 300; color: #555; line-height: 40px; }
+
+            img { max-width: 100%; }
+
+            .medium-paragraph { font-size: 18px; line-height: 34px; }
+
+            .colored { color: #468aa8; }
+
+            ::-moz-selection { background: #468aa8; color: #fff; text-shadow: none; }
+            ::selection { background: #468aa8; color: #fff; text-shadow: none; }
+
+
+            /***** General style, all sections *****/
+
+            .section-container { margin: 0 auto; padding-bottom: 80px; }
+            .section-description { margin-top: 60px; padding-bottom: 10px; }
+            .section-description p { margin-top: 20px; padding: 0 120px; }
+
+
+            /***** Divider *****/
+
+            .divider-1 { padding: 25px 0 15px 0; }
+            .divider-1 .line { width: 160px; margin: 0 auto; border-bottom: 1px dashed #ccc; }
+
+
+            /***** Top menu *****/
+
+            .navbar {
+                margin-bottom: 0;
+                background: #d5fbfd;
+                border: 0;
+                -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+                -o-transition: all .6s; -moz-transition: all .6s; -webkit-transition: all .6s; -ms-transition: all .6s; transition: all .6s;
+            }
+
+            ul.navbar-nav {
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 14px;
+                color: #fff;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+
+            .navbar-inverse ul.navbar-nav li a { padding-top: 20px; padding-bottom: 20px; color: #fff; border: 0; }
+            .navbar-inverse ul.navbar-nav li a:hover { color: #ddd; border: 0; }
+            .navbar-inverse ul.navbar-nav li a:focus { color: #ddd; outline: 0; border: 0; }
+
+            .navbar-brand {
+                width: 102px;
+                height: 60px;
+                background: url(../assets/img/logo.png) left center no-repeat;
+                text-indent: -99999px;
+            }
+            .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand { margin-left: 0; }
+
+
+            /***** Top content *****/
+
+            .top-content { padding: 80px 0 180px 0; }
+
+            .top-content .text { padding-top: 60px; color: #fff; }
+            .top-content .text h1 { margin-top: 25px; color: #fff; }
+
+            .top-content .description { margin: 30px 0 10px 0; }
+            .top-content .description p { opacity: 0.8; }
+            .top-content .description a { color: #fff; border-bottom: 1px dotted #fff; }
+            .top-content .description a:hover, .top-content .description a:focus { color: #fff; border: 0; }
+
+
+            /***** Features *****/
+
+            .features-box { margin-top: 30px; text-align: left; }
+            .features-box .features-box-icon { font-size: 60px; color: #468aa8; line-height: 60px; text-align: center; }
+            .features-box h3 { margin-top: 0; padding: 0 0 10px 0; }
+
+
+            /***** Footer *****/
+
+            footer { padding: 40px 0 45px 0; background: #f8f8f8; }
+
+            .footer-copyright { padding-top: 15px; }
+            .footer-copyright a { color: #888; border-bottom: 1px dotted #888; }
+            .footer-copyright a:hover, .footer-copyright a:focus { color: #888; border: 0; }
+
+
+
+            /***** MEDIA QUERIES *****/
+
+
+            @media (min-width: 992px) and (max-width: 1199px) {}
+
+            @media (min-width: 768px) and (max-width: 991px) {
+
+                .section-description p { padding: 0; }
+
+                .features-box .features-box-icon { font-size: 50px; line-height: 50px; }
+
+            }
+
+            @media (max-width: 767px) {
+
+                .navbar.navbar-no-bg { background: #444; }
+                .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand { margin-left: 15px; }
+                .navbar-collapse { border: 0; }
+                .navbar-inverse .navbar-toggle { margin-top: 13px; border-color: transparent; }
+                .navbar-inverse ul.navbar-nav li a { padding-top: 10px; padding-bottom: 10px; }
+                .navbar-inverse ul.navbar-nav li a:hover, .navbar-inverse ul.navbar-nav li a:focus { border: 0; }
+
+                .section-description p { padding: 0; }
+
+                .top-content { padding: 50px 0 80px 0; }
+                .top-content .text { padding-top: 20px; }
+
+                .features-box { text-align: center; }
+                .features-box h3 { margin-top: 5px; padding-top: 10px; }
+
+            }
+
+            @media (max-width: 415px) {
+
+                h1, h2 { font-size: 36px; }
+
+            }
+
+
+            /* Retina-ize images/icons */
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (   min--moz-device-pixel-ratio: 2),
+            only screen and (     -o-min-device-pixel-ratio: 2/1),
+            only screen and (        min-device-pixel-ratio: 2),
+            only screen and (                min-resolution: 192dpi),
+            only screen and (                min-resolution: 2dppx) {
+
+                /* logo */
+                .navbar-brand {
+                    background-image: url(../assets/img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 102px 32px !important;
+                }
+
+            }
+        </style>
+    </th:block>
+
+</head>
+<body>
+    <th:block th:fragment="navbar">
+<!--        <nav class="navbar navbar-inverse" role="navigation">-->
+<!--            <div class="container">-->
+<!--&lt;!&ndash;                <div class="navbar-header">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="sr-only">Toggle navigation</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="icon-bar"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="icon-bar"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="icon-bar"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class="navbar-brand" href="http://localhost:8080/">Bootstrap Navbar Menu Template</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;-->
+<!--                <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+<!--                    <ul class="navbar-nav">-->
+<!--                        <li class="nav-item"><a href="/">Home</a></li>-->
+<!--                        <li class="nav-item"><a th:href="@{/client}">Customer</a></li>-->
+<!--                        <li class="nav-item"><a href="contract">Contract</a></li>-->
+<!--                        <li class="nav-item"><form><input type="text"></li>-->
+<!--                        <li class="nav-item"><input type="submit" value="Search" style="color: #3c3c3c"></form></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Options</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/client}">Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Employee</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </th:block>
+
+        <!-- Top content -->
+    <th:block th:fragment="picheader">
+    <div class="top-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text wow fadeInLeft">
+                        <h1 style="color: #199195; font-weight: bolder" >Welcome to SALE PROGRAM MANAGERMENT</h1>
+                        <div class="description">
+                            <p class="medium-paragraph" style="color: #cffad9; background-color: #3c3c3c">
+                                To add new sale program, please click <a href="http://localhost:8080/addSale" >HERE</a>!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </th:block>
+
+    <th:block th:fragment="script">
+        <!-- Javascript -->
+        <script src="../assets/js/jquery-3.4.1.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../assets/js/wow.min.js"></script>
+        <script src="../assets/js/retina-1.1.0.min.js"></script>
+        <script src="../assets/js/scripts.js"></script>
+<!--        &lt;!&ndash;[if lt IE 10]>-->
+<!--        <script src="../assets/js/placeholder.js"></script>-->
+<!--        <![endif]&ndash;&gt;-->
+    </th:block>
+
+    <th:block th:fragment="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 footer-copyright">
+                    &copy; Furama Resort DaNang
+                </div>
+            </div>
+        </div>
+    </th:block>
+</body>
+</html>

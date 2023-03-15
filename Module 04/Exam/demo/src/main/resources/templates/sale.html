@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sale</title>
+
+					<th:block th:replace="~{layout::top-bootstrap}"></th:block>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--	<link rel="stylesheet" href="/bootstrap.min.css">-->
+<!--	<script src="/bootstrap.bundle.min.js"></script>-->
+
+</head>
+
+<body>
+<th:block th:replace="~{layout::navbar}"></th:block>
+<th:block th:replace="~{layout::picheader}"></th:block>
+
+<!--  <div class="notify">-->
+<!--    <div th:if="${success}">-->
+<!--      <span th:text="${success}"></span>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--    <p style="color: blue">${msg}</p>-->
+<!-- Features -->
+		<br>
+		<center>
+			<div class="notify">
+				<div th:if="${success}">
+					<span th:text="${success}"></span>
+				</div>
+			</div>
+			<p style="color: blue" th:text="${msg}"></p>
+
+
+
+			<table>
+				<tr>
+					<td><a th:href="@{/addSale}"><button>Add New Sale Program</button></a></td>
+
+				</tr>
+			</table>
+			<br>
+			<form action="/searchprice" method="get">
+				<input type="text" name="price">
+				<input type="submit" value="Search">
+			</form>
+			<form action="/searchstart" method="get">
+				<input type="text" name="start">
+				<input type="submit" value="Search">
+			</form><form action="/searchend" method="get">
+			<input type="text" name="end">
+			<input type="submit" value="Search">
+		</form>
+<!--			<div class="col-lg-6 table-search" th:with="tmp=${#strings.arraySplit(q,':')}">-->
+<!--				<form class="row gy-2 gx-3 align-items-center" action="/search">-->
+<!--					<div class="col-auto">-->
+<!--						<select class="form-select" id="searchBy">-->
+<!--							<option th:selected="${tmp.length}>0 ?${tmp[0]}=='all':false" value="all">Search By ...-->
+<!--							</option>-->
+<!--							<option th:selected="${tmp.length}>0 ?${tmp[0]}=='price':false" value="price">Price</option>-->
+<!--							<option th:selected="${tmp.length}>0 ?${tmp[0]}=='startDate':false" value="startDate">-->
+<!--								Start Date-->
+<!--							</option>-->
+<!--							<option th:selected="${tmp.length}>0 ?${tmp[0]}=='endDate':false" value="endDate">-->
+<!--								End Date-->
+<!--							</option>-->
+<!--						</select>-->
+<!--					</div>-->
+<!--					<div class="col-auto">-->
+<!--						<input type="text" class="form-control" id="searchVal"-->
+<!--							   th:value="${tmp.length}>0 ? ${tmp[1]}:''">-->
+<!--					</div>-->
+<!--					<div class="col-auto">-->
+<!--						<a id="sbmSearch" href="/" class="btn btn-secondary">Submit</a>-->
+<!--					</div>-->
+<!--				</form>-->
+<!--			</div>-->
+		</center>
+		<br>
+        <div>
+				<table id="product">
+				<thead>
+				<tr>
+					<th>Title</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+					<th>Sale Price</th>
+					<th>Detail</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+				</thead>
+				<tbody>
+				<tr th:each="sale,state : ${salelist}">
+					<td th:text="${sale.title}"></td>
+					<td th:text="${sale.startDate}"></td>
+					<td th:text="${sale.endDate}"></td>
+                    <td th:text="${sale.price}"></td>
+                    <td th:text="${sale.detail}"></td>
+					<td><a th:href="@{/editsale/{id}(id=${sale.id})}">Edit</a> </td>
+					<td>
+<!--						<a th:href="@{/deleteclient/{id}(id=${client.id})}">Delete</a>-->
+						<!--      Modal -->
+						<button type="button" th:data-id="${sale.id}" th:data-name="${sale.title}" onclick="infoDelete(this.getAttribute('data-id'), this.getAttribute('data-name'))" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							Delete
+						</button>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+<!--		<div>-->
+<!--				<span>-->
+<!--					<a th:if="${clientlist.hasPrevious()}" th:href="@{/client(page = ${clientlist.number - 1})}">Previous</a>-->
+<!--				</span>-->
+<!--			<span th:each="pageNo: ${#numbers.sequence(0,clientlist.totalPages - 1)}">-->
+<!--					<a th:href="@{/client(page = ${pageNo})}" th:text="${pageNo}"></a>-->
+<!--				</span>-->
+<!--			<span>-->
+<!--					<a th:if="${clientlist.hasNext()}" th:href="@{/client(page = ${clientlist.number + 1})}">Next</a>-->
+<!--				</span>-->
+<!--		</div>-->
+
+<!--Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+<!--		<%&#45;&#45;        sửa ở đây&#45;&#45;%>-->
+		<form th:action="@{/deleteSale/}" method="get">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Confirm Deleting</h5>
+<!--					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+				</div>
+				<div class="modal-body">
+					<input name="action" value="delete" hidden>
+					<input name="deleteId" id="deleteId" hidden>
+					<span class="text-danger">Do you want to delete sale program:  </span><span id="deleteName"></span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Delete</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!--Script Delete-->
+<script>
+	function infoDelete(id, name) {
+		document.getElementById("deleteId").innerText=id;
+		document.getElementById("deleteId").value=id;
+		document.getElementById("deleteName").innerText=name;
+	}
+</script>
+
+<th:block th:replace="~{layout::script}"></th:block>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>-->
+<th:block th:replace="~{layout::footer}"></th:block>
+
+</body>
+
+</html>
+<script>
+	$("#sbmSearch").click(function () {
+		if ($("#searchVal").val() != '') {
+			const q = $("#searchBy").val() + ":" + $("#searchVal").val();
+			$("#sbmSearch").attr('href', '?q=' + q);
+		}
+	});
+</script>

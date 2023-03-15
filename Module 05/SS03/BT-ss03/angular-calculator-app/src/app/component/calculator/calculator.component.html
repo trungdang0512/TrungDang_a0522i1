@@ -1,0 +1,16 @@
+<label>
+  <input #number01 type="number" [value]="calculator.num1">
+</label>
+<br>
+<label>
+  <input #number02 type="number" [value]="calculator.num2">
+</label>
+<br>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" name="options" id="sum" (click)="sum(number01.value, number02.value)">+</button>
+  <button type="button" class="btn btn-secondary" name="options" id="sub" (click)="sub(number01.value, number02.value)">-</button>
+  <button type="button" class="btn btn-secondary" name="options" id="mul" (click)="mul(number01.value, number02.value)">x</button>
+  <button type="button" class="btn btn-secondary" name="options" id="div" (click)="div(number01.value, number02.value)">/</button>
+</div>
+<h3>Result: {{calculator.result}}</h3>
+

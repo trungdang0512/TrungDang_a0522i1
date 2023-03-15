@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Management</title>
+
+    <th:block th:replace="~{layout::top-bootstrap}"></th:block>
+    <style>
+        table {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: lighter;
+        }
+    </style>
+</head>
+<body>
+<th:block th:replace="~{layout::navbar}"></th:block>
+
+<h3>Add New Sale Program</h3>
+<p><a th:href="@{/sale}">Back to Sale Progams List</a></p>
+<div id="form">
+    <form th:action="@{/saveNew}" th:object="${newSale}" method="post" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <center>
+        <table style="text-align: left" border="1px">
+        <tr>
+            <td><label>Title</label></td>
+            <td><input type="text" th:field="*{title}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p></td>
+        </tr>
+        <tr>
+            <td><label>Start Date</label></td>
+            <td><input th:field="*{startDate}" type="date"></input>
+                <p style="color: red" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></p></td>
+        </tr>
+            <tr>
+                <td><label>End Date</label></td>
+                <td><input th:field="*{endDate}" type="date"></input>
+                    <p style="color: red" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></p></td>
+            </tr>
+        <tr>
+            <td><label>Sale Price</label></td>
+            <td><input th:field="*{price}" type="number"></input>
+                <p style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p></td>
+        </tr>
+        <tr>
+            <td><label>Detail</label></td>
+            <td><textarea th:field="*{detail}" rows="20"></textarea>
+                <p style="color: red" th:if="${#fields.hasErrors('detail')}" th:errors="*{detail}"></p></td>
+        </tr>
+        </table>
+        </center>
+        <center><input type="submit" value="Save"> <input type="reset" value="Clear All"></center>
+    </form>
+</div>
+
+<th:block th:replace="~{layout::script}"></th:block>
+<th:block th:replace="~{layout::footer}"></th:block>
+</body>
+</html>
