@@ -1,1 +1,4 @@
-{{like}} likes. <button (click)="likeThis()">Like</button>
+{{like}} likes.
+
+<button type="button" class="btn btn-primary btn-sm" (click)="likeThis()"><fa-icon [icon]="faThumpsUp"></fa-icon></button>
+<button type="button" class="btn btn-secondary btn-sm" (click)="unLikeThis()"><fa-icon [icon]="faThumpsDown"></fa-icon></button>

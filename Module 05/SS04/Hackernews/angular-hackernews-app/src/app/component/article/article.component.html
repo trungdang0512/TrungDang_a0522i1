@@ -1,10 +1,22 @@
-<h2>Today's article</h2>
-<hr>
-<div *ngFor="let art of articles">
-  <a href="{{art.url}}" target="_blank">{{art.title}}</a>: <app-like></app-like>
-</div>
-<hr>
-<div>
+<center>
+<h2>Today's Article</h2>
+</center>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col"><h5>Articles</h5></th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let art of articles">
+    <td><a href="{{art.url}}" target="_blank">{{art.title}}</a>:</td>
+    <td><app-like></app-like></td>
+  </tr>
+  </tbody>
+</table>
+<center>
+  <div>
   <h2>Article Information</h2>
   <table>
     <tr>
@@ -19,9 +31,9 @@
     </tr>
     <tr>
       <td></td>
-      <td><button style="float: right" (click)="addNewArticle()">Add</button></td>
+      <td><button type="button" class="btn btn-primary" style="float: right" (click)="addNewArticle()">Add</button></td>
     </tr>
   </table>
 </div>
 <hr>
-@CodeGym, 2021
+</center>
