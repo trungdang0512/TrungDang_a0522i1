@@ -1,0 +1,30 @@
+<center>
+  <h2>Client Information</h2>
+</center>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col"><h5>ID</h5></th>
+    <th scope="col"><h5>Name</h5></th>
+    <th scope="col"><h5>ID Number</h5></th>
+    <th scope="col"><h5>Type</h5></th>
+    <th scope="col"><h5>Date of Birth</h5></th>
+    <th scope="col"><h5>Phone Number</h5></th>
+    <th scope="col"><h5>Email</h5></th>
+    <th scope="col"><h5>Address</h5></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let client of clients">
+    <td><p>{{client.id}}</p></td>
+    <td><p>{{client.nameClient}}</p></td>
+    <td><p>{{client.idClient}}</p></td>
+    <td><p>{{client.typeClient}}</p></td>
+    <td><p>{{client.dateOfBirth}}</p></td>
+    <td><p>{{client.phone}}</p></td>
+    <td><p>{{client.email}}</p></td>
+    <td><p>{{client.address}}</p></td>
+  </tr>
+  </tbody>
+</table>
+<app-client-create (eventEmit)="addNewClient($event)"></app-client-create>

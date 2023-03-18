@@ -1,0 +1,62 @@
+<center>
+  <div>
+    <h2>Add New Client</h2>
+    <table>
+      <tr>
+        <td>ID:</td>
+        <td><label>
+          <input [(ngModel)]="service.id"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Service:</td>
+        <td><label>
+          <input [(ngModel)]="service.nameService"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Area:</td>
+        <td><label>
+          <input type="number" [(ngModel)]="service.area"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Number of Floor:</td>
+        <td><label>
+          <input type="number" [(ngModel)]="service.floor"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Number of People</td>
+        <td><label>
+          <input type="number" [(ngModel)]="service.peopleNumber"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Hiring Cost:</td>
+        <td><label>
+          <input [(ngModel)]="service.cost"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Hiring Type:</td>
+        <td><label>
+          <input [(ngModel)]="service.hireType"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Status:</td>
+        <td><label>
+          <input [(ngModel)]="service.status"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="0">
+
+          <button type="button" class="btn btn-primary" (click)="addNewService()">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+</center>

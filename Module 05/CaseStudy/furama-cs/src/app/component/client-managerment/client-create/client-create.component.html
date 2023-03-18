@@ -1,0 +1,67 @@
+<center>
+  <div>
+    <h2>Add New Client</h2>
+    <table>
+      <tr>
+        <td>ID:</td>
+        <td><label>
+          <input [(ngModel)]="client.id"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td><label>
+          <input [(ngModel)]="client.nameClient"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>ID Number:</td>
+        <td><label>
+          <input [(ngModel)]="client.idClient"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Type:</td>
+        <td><label>
+          <select [(ngModel)]="client.typeClient">
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+            <option value="Diamond">Diamond</option>
+            <option value="Platinum">Platinum</option>
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Date Of Birth:</td>
+        <td><label>
+          <input type="date" [(ngModel)]="client.dateOfBirth"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td><label>
+          <input [(ngModel)]="client.phone"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><label>
+          <input [(ngModel)]="client.email"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><label>
+          <input [(ngModel)]="client.address"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="0">
+
+          <button type="button" class="btn btn-primary" (click)="addNewClient()">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+</center>

@@ -4,29 +4,29 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClientComponent } from './component/client/client.component';
-import { EmployeeComponent } from './component/employee/employee.component';
-import { ServiceComponent } from './component/service/service.component';
-import { ContractComponent } from './component/contract/contract.component';
-import { ContractDetailComponent } from './component/contract-detail/contract-detail.component';
+import { ClientComponent } from './component/client-managerment/client/client.component';
 import { HeaderComponent } from './component/template/header/header.component';
 import { FooterComponent } from './component/template/footer/footer.component';
+import {FormsModule} from "@angular/forms";
+import { ClientCreateComponent } from './component/client-managerment/client-create/client-create.component';
+import { ServiceListComponent } from './component/service-managerment/service-list/service-list.component';
+import { ServiceCreateComponent } from './component/service-managerment/service-create/service-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientComponent,
-    EmployeeComponent,
-    ServiceComponent,
-    ContractComponent,
-    ContractDetailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ClientCreateComponent,
+    ServiceListComponent,
+    ServiceCreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

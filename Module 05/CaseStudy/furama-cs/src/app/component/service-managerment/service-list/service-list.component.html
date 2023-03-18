@@ -1,0 +1,30 @@
+<center>
+  <h2>Client Information</h2>
+</center>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col"><h5>ID</h5></th>
+    <th scope="col"><h5>Service</h5></th>
+    <th scope="col"><h5>Area</h5></th>
+    <th scope="col"><h5>Number of Floor</h5></th>
+    <th scope="col"><h5>Number of People</h5></th>
+    <th scope="col"><h5>Hiring Cost</h5></th>
+    <th scope="col"><h5>Hiring Type</h5></th>
+    <th scope="col"><h5>Status</h5></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let service of services">
+    <td><p>{{service.id}}</p></td>
+    <td><p>{{service.nameService}}</p></td>
+    <td><p>{{service.area}}</p></td>
+    <td><p>{{service.floor}}</p></td>
+    <td><p>{{service.peopleNumber}}</p></td>
+    <td><p>{{service.cost}}</p></td>
+    <td><p>{{service.hireType}}</p></td>
+    <td><p>{{service.status}}</p></td>
+  </tr>
+  </tbody>
+</table>
+<app-client-create (eventEmit)="addNewService($event)"></app-client-create>
