@@ -1,0 +1,36 @@
+  <form [formGroup]="signupForm" (ngSubmit)="addNewAccount()">
+    <label>Email:</label>
+    <input formControlName="email"><br>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.email.hasError('required')">Email can not be blanked</p>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.email.hasError('email')">Wrong email form</p>
+
+    <label>Password:</label>
+    <input formControlName="password"><br>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.password.hasError('required')">Password can not be blanked</p>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.password.hasError('minLength')">Password must contains more than 6 characters</p>
+
+    <label>Confirm Password:</label>
+    <input formControlName="passwordConfirm"><br>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.passwordConfirm.hasError('required')">Password can not be blanked</p>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.passwordConfirm.hasError('minLength')">Password must contains more than 6 characters</p>
+
+    <label>Country:</label>
+    <input formControlName="country"><br>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.country.hasError('required')">Country can not be blanked</p>
+
+    <label>Age:</label>
+    <input type="number" formControlName="age"><br>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.age.hasError('min')">Password can not be blanked</p>
+
+    <label>Gender:</label>
+    <input formControlName="gender"><br>
+    <p style="color:#ff7355" *ngIf="signupForm.controls.gender.hasError('required')">Gender can not be blanked</p>
+
+    <label>Phone:</label>
+    <input formControlName="phone"><br>
+<!--    <p style="color:#ff7355" *ngIf="signupForm.controls.phone.hasError('pattern')">Wrong phone format</p>-->
+    <p style="color:#ff7355" *ngIf="signupForm.hasError('checkConfirmPass')&&signupForm.controls.confirmPass.touched">Not matches with password</p>
+    <button type="submit">Confirm</button>
+  </form>
+
+

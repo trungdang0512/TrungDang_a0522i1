@@ -1,0 +1,27 @@
+<center>
+  <h2>Client Information</h2>
+</center>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col"><h5>Email</h5></th>
+    <th scope="col"><h5>Password</h5></th>
+    <th scope="col"><h5>Age</h5></th>
+    <th scope="col"><h5>Country</h5></th>
+    <th scope="col"><h5>Gender</h5></th>
+    <th scope="col"><h5>Phone Number</h5></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let account of accounts">
+    <td><p>{{account.email}}</p></td>
+    <td><p>{{account.password}}</p></td>
+    <td><p>{{account.age}}</p></td>
+    <td><p>{{account.county}}</p></td>
+    <td><p>{{account.gender}}</p></td>
+    <td><p>{{account.phone}}</p></td>
+
+  </tr>
+  </tbody>
+</table>
+<app-bt-register-form (eventEmmit)="addnewAccount($event)"></app-bt-register-form>
