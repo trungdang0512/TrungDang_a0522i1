@@ -1,0 +1,30 @@
+<center>
+  <h2>Client Information</h2>
+</center>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col"><h5>ID Contract</h5></th>
+    <th scope="col"><h5>ID Employee</h5></th>
+    <th scope="col"><h5>ID Client</h5></th>
+    <th scope="col"><h5>ID Service</h5></th>
+    <th scope="col"><h5>Start Date</h5></th>
+    <th scope="col"><h5>End Date</h5></th>
+    <th scope="col"><h5>Deposit Money</h5></th>
+    <th scope="col"><h5>Total Money</h5></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contract of contracts">
+    <td><p>{{contract.idContract}}</p></td>
+    <td><p>{{contract.idEmployee}}</p></td>
+    <td><p>{{contract.idClient}}</p></td>
+    <td><p>{{contract.idService}}</p></td>
+    <td><p>{{contract.startDate}}</p></td>
+    <td><p>{{contract.endDate}}</p></td>
+    <td><p>{{contract.depositMoney}}</p></td>
+    <td><p>{{contract.totalMoney}}</p></td>
+  </tr>
+  </tbody>
+</table>
+<app-contract-create (eventEmit)="addNewContract($event)"></app-contract-create>

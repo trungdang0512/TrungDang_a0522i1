@@ -44,7 +44,7 @@ export class BtRegisterFormComponent implements OnInit {
       if (pass === passCon) {
         return null
       }
-      return {passConfirmError: true}
+        return {passConfirmError: true}
     }
   }
 }

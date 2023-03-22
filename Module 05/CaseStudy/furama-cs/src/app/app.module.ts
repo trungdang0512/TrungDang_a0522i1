@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { ClientComponent } from './component/client-managerment/client/client.component';
 import { HeaderComponent } from './component/template/header/header.component';
 import { FooterComponent } from './component/template/footer/footer.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ClientCreateComponent } from './component/client-managerment/client-create/client-create.component';
 import { ServiceListComponent } from './component/service-managerment/service-list/service-list.component';
 import { ServiceCreateComponent } from './component/service-managerment/service-create/service-create.component';
+import { ContractListComponent } from './component/contract-managerment/contract-list/contract-list.component';
+import { ContractCreateComponent } from './component/contract-managerment/contract-create/contract-create.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,17 @@ import { ServiceCreateComponent } from './component/service-managerment/service-
     FooterComponent,
     ClientCreateComponent,
     ServiceListComponent,
-    ServiceCreateComponent
+    ServiceCreateComponent,
+    ContractListComponent,
+    ContractCreateComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Service} from "../../../model/service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-service-create',
@@ -11,13 +12,29 @@ export class ServiceCreateComponent implements OnInit {
   @Output()
   eventEmit = new EventEmitter();
 
-  constructor() { }
+  createNewServiceForm: FormGroup;
+
+  constructor() {
+    this.createNewServiceForm = new FormGroup({
+      id: new FormControl(),
+      nameService: new FormControl(),
+      area: new FormControl(),
+      floor: new FormControl(),
+      peopleNumber: new FormControl(),
+      cost: new FormControl(),
+      hireType: new FormControl(),
+      status: new FormControl()
+    })
+  }
 
   ngOnInit(): void {
   }
 
   addNewService() {
-    this.eventEmit.emit(this.service);
-    this.service = {};
+    console.log(this.createNewServiceForm)
+    if (this.createNewServiceForm.valid){
+      console.log(this.createNewServiceForm.value)
+      this.eventEmit.emit(this.createNewServiceForm.value);
+    }
   }
 }

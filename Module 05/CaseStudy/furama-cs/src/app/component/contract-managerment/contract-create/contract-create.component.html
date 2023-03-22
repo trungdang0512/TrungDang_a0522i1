@@ -1,0 +1,64 @@
+<center>
+  <div>
+    <h2>Add New Contract</h2>
+    <form [formGroup]="createContractForm" (ngSubmit)="createNewContract()">
+    <table>
+      <tr>
+        <td>ID Contract:</td>
+        <td><label>
+          <input formControlName="idContract"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>ID Employee:</td>
+        <td><label>
+          <input formControlName="idEmployee"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>ID Client:</td>
+        <td><label>
+          <input formControlName="idClient"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>ID Service:</td>
+        <td><label>
+          <input formControlName="idService"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Start Date:</td>
+        <td><label>
+          <input type="date" formControlName="startDate"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>End Date:</td>
+        <td><label>
+          <input type="date" formControlName="endDate"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Deposit Money:</td>
+        <td><label>
+          <input formControlName="depositMoney"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td>Total Money:</td>
+        <td><label>
+          <input formControlName="totalMoney"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="0">
+
+          <button type="submit">Submit</button>
+        </td>
+      </tr>
+    </table>
+    </form>
+  </div>
+  <hr>
+</center>

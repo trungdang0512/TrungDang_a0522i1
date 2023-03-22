@@ -1,0 +1,15 @@
+<form [formGroup]="signInForm" (ngSubmit)="signIn()">
+  <label>Email: </label>
+  <input formControlName="email"><br>
+  <p style="color:#ff7355" *ngIf="signInForm.controls.email.hasError('required')">Email can not be blanked</p>
+  <p style="color:#ff7355" *ngIf="signInForm.controls.email.hasError('email')">Wrong email form</p>
+  <p style="color:#ff7355" *ngIf="signInForm.hasError('emailConfirmError')&& signInForm.controls.email.touched">Not matches with email</p>
+
+  <label>Password: </label>
+  <input formControlName="password"><br>
+  <p style="color:#ff7355" *ngIf="signInForm.controls.password.hasError('minLength')">Password must contains more than 6 characters</p>
+  <p style="color:#ff7355" *ngIf="signInForm.hasError('passConfirmError')&& signInForm.controls.password.touched">Not matches with password</p>
+
+  <button type="submit">Login</button>
+
+</form>

@@ -12,6 +12,7 @@ import { ThTodoAppComponent } from './component/ss06/th-todo-app/th-todo-app.com
 import {ReactiveFormsModule} from "@angular/forms";
 import { BtRegisterFormComponent } from './component/ss06/bt-register-form/bt-register-form.component';
 import { BtRegisterAcclistComponent } from './component/ss06/bt-register-acclist/bt-register-acclist.component';
+import { BtLoginComponent } from './component/ss06/bt-login/bt-login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BtRegisterAcclistComponent } from './component/ss06/bt-register-acclist
     BtCountdownTimerComponent,
     ThTodoAppComponent,
     BtRegisterFormComponent,
-    BtRegisterAcclistComponent
+    BtRegisterAcclistComponent,
+    BtLoginComponent
   ],
     imports: [
         BrowserModule,

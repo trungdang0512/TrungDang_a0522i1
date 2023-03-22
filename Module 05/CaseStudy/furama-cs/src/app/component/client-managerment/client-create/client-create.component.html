@@ -1,29 +1,30 @@
 <center>
   <div>
     <h2>Add New Client</h2>
+    <form [formGroup]="createClientForm" (ngSubmit)="addNewClient()">
     <table>
       <tr>
         <td>ID:</td>
         <td><label>
-          <input [(ngModel)]="client.id"/>
+          <input formControlName="id"/>
         </label></td>
       </tr>
       <tr>
         <td>Name:</td>
         <td><label>
-          <input [(ngModel)]="client.nameClient"/>
+          <input formControlName="nameClient"/>
         </label></td>
       </tr>
       <tr>
         <td>ID Number:</td>
         <td><label>
-          <input [(ngModel)]="client.idClient"/>
+          <input formControlName="idClient"/>
         </label></td>
       </tr>
       <tr>
         <td>Type:</td>
         <td><label>
-          <select [(ngModel)]="client.typeClient">
+          <select formControlName="typeClient">
             <option value="Silver">Silver</option>
             <option value="Gold">Gold</option>
             <option value="Diamond">Diamond</option>
@@ -34,34 +35,35 @@
       <tr>
         <td>Date Of Birth:</td>
         <td><label>
-          <input type="date" [(ngModel)]="client.dateOfBirth"/>
+          <input type="date" formControlName="dateOfBirth"/>
         </label></td>
       </tr>
       <tr>
         <td>Phone:</td>
         <td><label>
-          <input [(ngModel)]="client.phone"/>
+          <input formControlName="phone"/>
         </label></td>
       </tr>
       <tr>
         <td>Email:</td>
         <td><label>
-          <input [(ngModel)]="client.email"/>
+          <input formControlName="email"/>
         </label></td>
       </tr>
       <tr>
         <td>Address:</td>
         <td><label>
-          <input [(ngModel)]="client.address"/>
+          <input formControlName="address"/>
         </label></td>
       </tr>
       <tr>
         <td colspan="0">
 
-          <button type="button" class="btn btn-primary" (click)="addNewClient()">Submit</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </td>
       </tr>
     </table>
+    </form>
   </div>
   <hr>
 </center>
