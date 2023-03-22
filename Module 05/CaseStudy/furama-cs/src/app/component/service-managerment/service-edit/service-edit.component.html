@@ -1,0 +1,64 @@
+<center>
+  <div>
+    <h2>Add New Service</h2>
+    <form [formGroup]="editServiceForm" (ngSubmit)="editService()">
+      <table>
+        <tr>
+          <td>ID:</td>
+          <td><label>
+            <input formControlName="id"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Service:</td>
+          <td><label>
+            <input formControlName="nameService"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Area:</td>
+          <td><label>
+            <input type="number" formControlName="area"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Number of Floor:</td>
+          <td><label>
+            <input type="number" formControlName="floor"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Number of People</td>
+          <td><label>
+            <input type="number" formControlName="peopleNumber"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Hiring Cost:</td>
+          <td><label>
+            <input formControlName="cost"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Hiring Type:</td>
+          <td><label>
+            <input formControlName="hireType"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Status:</td>
+          <td><label>
+            <input formControlName="status"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td colspan="0">
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <hr>
+</center>
