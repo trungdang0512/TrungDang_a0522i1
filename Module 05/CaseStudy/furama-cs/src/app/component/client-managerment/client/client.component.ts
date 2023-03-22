@@ -29,10 +29,15 @@ export class ClientComponent implements OnInit {
       address: "Huynh Thuc Khang, Da Nang"
     }
     ]
+  clientInfo: Client;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getInfo(temp: Client){
+    this.clientInfo= temp;
   }
 
   addNewClient(event: any): void{

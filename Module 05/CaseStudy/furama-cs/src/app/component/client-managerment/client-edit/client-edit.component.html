@@ -1,0 +1,69 @@
+<center>
+  <div>
+    <h2>Edit Client</h2>
+    <form [formGroup]="editClientForm" (ngSubmit)="editClient()">
+      <table>
+        <tr>
+          <td>ID:</td>
+          <td><label>
+            <input formControlName="id" value="{{client.id}}"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td><label>
+            <input formControlName="nameClient" value="{{client.nameClient}}"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>ID Number:</td>
+          <td><label>
+            <input formControlName="idClient" value="{{client.idClient}}"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Type:</td>
+          <td><label>
+            <select formControlName="typeClient" value="{{client.typeClient}}">
+              <option value="Silver">Silver</option>
+              <option value="Gold">Gold</option>
+              <option value="Diamond">Diamond</option>
+              <option value="Platinum">Platinum</option>
+            </select>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Date Of Birth:</td>
+          <td><label>
+            <input type="date" formControlName="dateOfBirth" value="{{client.dateOfBirth}}"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td><label>
+            <input formControlName="phone" value="{{client.phone}}"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><label>
+            <input formControlName="email" value="{{client.email}}"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td><label>
+            <input formControlName="address" value="{{client.address}}"/>
+          </label></td>
+        </tr>
+        <tr>
+          <td colspan="0">
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <hr>
+</center>

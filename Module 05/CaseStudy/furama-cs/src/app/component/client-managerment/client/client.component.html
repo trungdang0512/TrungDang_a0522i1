@@ -12,6 +12,8 @@
     <th scope="col"><h5>Phone Number</h5></th>
     <th scope="col"><h5>Email</h5></th>
     <th scope="col"><h5>Address</h5></th>
+    <th scope="col"><h5>Edit</h5></th>
+
   </tr>
   </thead>
   <tbody>
@@ -24,7 +26,9 @@
     <td><p>{{client.phone}}</p></td>
     <td><p>{{client.email}}</p></td>
     <td><p>{{client.address}}</p></td>
+    <td><button class="btn-secondary" (click)="clientInfo = client">Edit</button></td>
   </tr>
   </tbody>
 </table>
 <app-client-create (eventEmit)="addNewClient($event)"></app-client-create>
+<app-client-edit [client]="clientInfo"></app-client-edit>

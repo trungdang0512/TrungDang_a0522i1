@@ -13,6 +13,7 @@ import { ServiceListComponent } from './component/service-managerment/service-li
 import { ServiceCreateComponent } from './component/service-managerment/service-create/service-create.component';
 import { ContractListComponent } from './component/contract-managerment/contract-list/contract-list.component';
 import { ContractCreateComponent } from './component/contract-managerment/contract-create/contract-create.component';
+import { ClientEditComponent } from './component/client-managerment/client-edit/client-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContractCreateComponent } from './component/contract-managerment/contra
     ServiceListComponent,
     ServiceCreateComponent,
     ContractListComponent,
-    ContractCreateComponent
+    ContractCreateComponent,
+    ClientEditComponent
   ],
     imports: [
         BrowserModule,
