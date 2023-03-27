@@ -13,6 +13,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { BtRegisterFormComponent } from './component/ss06/bt-register-form/bt-register-form.component';
 import { BtRegisterAcclistComponent } from './component/ss06/bt-register-acclist/bt-register-acclist.component';
 import { BtLoginComponent } from './component/ss06/bt-login/bt-login.component';
+import { ThTimelinesComponent } from './component/ss07/th-timelines/th-timelines.component';
+import { ThYoutubePlaylistComponent } from './component/ss07/th-youtube-playlist/th-youtube-playlist.component';
+import { YoutubePlayerComponent } from './component/ss07/th-youtube-playlist/youtube-player/youtube-player.component';
+import { ProductListComponent } from './component/ss07/product-managerment/product-list/product-list.component';
+import { ProductCreateComponent } from './component/ss07/product-managerment/product-create/product-create.component';
+import { ProductUpdateComponent } from './component/ss07/product-managerment/product-update/product-update.component';
+import { ProductDeleteComponent } from './component/ss07/product-managerment/product-delete/product-delete.component';
+import { DictionaryComponent } from './component/ss07/bt-dictionary/dictionary-detail/dictionary.component';
+import { DictionaryPageComponent } from './component/ss07/bt-dictionary/dictionary-page/dictionary-page.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +33,26 @@ import { BtLoginComponent } from './component/ss06/bt-login/bt-login.component';
     ThTodoAppComponent,
     BtRegisterFormComponent,
     BtRegisterAcclistComponent,
-    BtLoginComponent
+    BtLoginComponent,
+    ThTimelinesComponent,
+    ThYoutubePlaylistComponent,
+    YoutubePlayerComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductUpdateComponent,
+    ProductDeleteComponent,
+    DictionaryComponent,
+    DictionaryPageComponent
   ],
     imports: [
         BrowserModule,
         FontAwesomeModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [ProductDeleteComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

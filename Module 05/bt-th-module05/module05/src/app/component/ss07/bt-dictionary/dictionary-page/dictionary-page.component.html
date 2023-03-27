@@ -1,0 +1,13 @@
+<h1>Dictionary</h1>
+<table>
+  <tr>
+    <td>No</td>
+    <td>Word</td>
+    <td>Detail</td>
+  </tr>
+  <tr *ngFor="let word of dictionary; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{word.word}}</td>
+    <td><button class="btn btn-info" [routerLink]="['/dictionary/view',word.word]">View</button></td>
+  </tr>
+</table>
