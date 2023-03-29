@@ -1,62 +1,37 @@
 import { Injectable } from '@angular/core';
 import {Product} from "../component/ss07/product-managerment/product";
+import {environment} from "../../environments/environment";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+const API_URL = `${environment.apiUrl}`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  products: Product[] = [{
-    id: 1,
-    name: 'IPhone 12',
-    price: 2400000,
-    description: 'New'
-  }, {
-    id: 2,
-    name: 'IPhone 11',
-    price: 1560000,
-    description: 'Like new'
-  }, {
-    id: 3,
-    name: 'IPhone X',
-    price: 968000,
-    description: '97%'
-  }, {
-    id: 4,
-    name: 'IPhone 8',
-    price: 7540000,
-    description: '98%'
-  }, {
-    id: 5,
-    name: 'IPhone 11 Pro',
-    price: 1895000,
-    description: 'Like new'
-  }];
+  products: Product[] = [];
 
-  constructor() { }
-
-  getAll() {
-    return this.products;
+  constructor(private httpClient: HttpClient) {
   }
 
-  saveProduct(product) {
-    this.products.push(product);
+  getAll(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>('http://localhost:3000/product');
   }
 
-  findProductById(value: number): Product{
-    return this.products.find(product => product.id === value);
+  saveProduct(event: any): Observable<any>{
+    return this.httpClient.post<any>('http://localhost:3000/product', event);
   }
 
-  editProduct(product) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (product.id === this.products[i].id) {
-        this.products[i] = product;
-      }
-    }
+  findProductById(value: number): Observable<Product>{
+    return this.httpClient.get<Product>('http://localhost:3000/product/' + value);
   }
 
-  deleteProduct(id: number){
-    this.products = this.products.filter(product => {
-      return product.id !== id;
-    });
+  editProduct(value: number, product: Product): Observable<any> {
+   return this.httpClient.put<any>('http://localhost:3000/product/' + value, product);
+  }
+
+
+  deleteProduct(value: number): Observable<any>{
+    return this.httpClient.delete<any>('http://localhost:3000/product/' + value);
   }
 }

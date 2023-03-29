@@ -21,18 +21,20 @@ export class ProductUpdateComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(next =>{
       const id = next.get('id');
       if (id != null){
-        this.product = this.productService.findProductById(parseInt(id));
-        console.log(this.product);
+        this.productService.findProductById(parseInt(id)).subscribe(next =>{
+          console.log(next);
+          this.product = next;
+          this.updateProductForm = new FormGroup({
+            id: new FormControl(this.product.id),
+            name: new FormControl(this.product.name),
+            price: new FormControl(this.product.price),
+            description: new FormControl(this.product.description)
+          })
+        });
       }
     }, error => {
     }, () => {
     });
-    this.updateProductForm = new FormGroup({
-      id: new FormControl(this.product.id),
-      name: new FormControl(this.product.name),
-      price: new FormControl(this.product.price),
-      description: new FormControl(this.product.description)
-    })
   }
 
   ngOnInit(): void {
@@ -40,9 +42,10 @@ export class ProductUpdateComponent implements OnInit {
 
   update() {
     const product = this.updateProductForm.value;
-    this.productService.editProduct(product);
-    this.updateProductForm.reset();
-    this.alertWithSuccess();
+    this.productService.editProduct(this.product.id, product).subscribe(()=>{
+      this.alertWithSuccess();
+      this.updateProductForm.reset();
+    })
     this.route.navigateByUrl('/product/list');
   }
 

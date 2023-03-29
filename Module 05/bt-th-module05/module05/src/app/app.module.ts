@@ -19,9 +19,9 @@ import { YoutubePlayerComponent } from './component/ss07/th-youtube-playlist/you
 import { ProductListComponent } from './component/ss07/product-managerment/product-list/product-list.component';
 import { ProductCreateComponent } from './component/ss07/product-managerment/product-create/product-create.component';
 import { ProductUpdateComponent } from './component/ss07/product-managerment/product-update/product-update.component';
-import { ProductDeleteComponent } from './component/ss07/product-managerment/product-delete/product-delete.component';
 import { DictionaryComponent } from './component/ss07/bt-dictionary/dictionary-detail/dictionary.component';
 import { DictionaryPageComponent } from './component/ss07/bt-dictionary/dictionary-page/dictionary-page.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -40,7 +40,6 @@ import { DictionaryPageComponent } from './component/ss07/bt-dictionary/dictiona
     ProductListComponent,
     ProductCreateComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent,
     DictionaryComponent,
     DictionaryPageComponent
   ],
@@ -49,10 +48,11 @@ import { DictionaryPageComponent } from './component/ss07/bt-dictionary/dictiona
         FontAwesomeModule,
         AppRoutingModule,
         ReactiveFormsModule,
+        HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ProductDeleteComponent],
+  entryComponents: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule{}

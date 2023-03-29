@@ -24,10 +24,11 @@ export class ProductCreateComponent implements OnInit {
 
   submit() {
     const product = this.productForm.value;
-    this.productService.saveProduct(product);
+    this.productService.saveProduct(product).subscribe(next =>{
+      this.route.navigateByUrl('product/list');
+    });
     this.productForm.reset();
     this.alertWithSuccess();
-    this.route.navigateByUrl('product/list');
   }
 
   alertWithSuccess(){

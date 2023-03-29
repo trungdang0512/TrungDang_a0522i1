@@ -8,7 +8,6 @@ import {ProductCreateComponent} from "./component/ss07/product-managerment/produ
 import {ProductUpdateComponent} from "./component/ss07/product-managerment/product-update/product-update.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
-import {ProductDeleteComponent} from "./component/ss07/product-managerment/product-delete/product-delete.component";
 import {DictionaryComponent} from "./component/ss07/bt-dictionary/dictionary-detail/dictionary.component";
 import {DictionaryPageComponent} from "./component/ss07/bt-dictionary/dictionary-page/dictionary-page.component";
 
@@ -29,29 +28,29 @@ const routes: Routes = [
   //   }]
   // },
   // ss07 product-managerment
-  // {
-  //   path: 'product/list',
-  //   component: ProductListComponent
-  // },{
-  //   path: 'product/create',
-  //   component: ProductCreateComponent
-  // },{
-  //   path: 'product/edit/:id',
-  //   component: ProductUpdateComponent
-  // },{
-  //   path: 'product/delete/:id',
-  //   component: ProductDeleteComponent
-  // }
+  {
+    path: 'product/list',
+    component: ProductListComponent
+  },{
+    path: 'product/create',
+    component: ProductCreateComponent
+  },{
+    path: 'product/edit/:id',
+    component: ProductUpdateComponent
+  },{
+    path: 'product/delete/:id',
+    component: ProductListComponent
+  }
 
   //ss07 dictionary
-  {
-    path: 'dictionary',
-    component: DictionaryPageComponent
-  },
-  {
-    path: 'dictionary/view/:word',
-    component: DictionaryComponent
-  }
+  // {
+  //   path: 'dictionary',
+  //   component: DictionaryPageComponent
+  // },
+  // {
+  //   path: 'dictionary/view/:word',
+  //   component: DictionaryComponent
+  // }
 ];
 
 @NgModule({

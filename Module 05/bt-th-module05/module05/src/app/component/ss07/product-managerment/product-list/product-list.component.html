@@ -13,6 +13,6 @@
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td><button class="btn btn-info" [routerLink]="['/product/edit',product.id]">Edit</button></td>
-    <td><button class="btn btn-danger" [routerLink]="['/product/delete', product.id]">Delete</button></td>
+    <td><button class="btn btn-danger" [routerLink]="['/product/delete',product.id]" (click)="modalDeleteProduct(product)">Delete</button></td>
   </tr>
 </table>
