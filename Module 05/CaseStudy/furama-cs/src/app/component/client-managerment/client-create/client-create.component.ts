@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Client} from "../../../model/client";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -10,12 +11,10 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class ClientCreateComponent implements OnInit {
   client : Client ={};
-  @Output()
-  eventEmit = new EventEmitter();
 
   createClientForm: FormGroup;
 
-  constructor() {
+  constructor(private route: Router) {
     this.createClientForm = new FormGroup({
       id: new FormControl(),
       nameClient: new FormControl(),
@@ -36,7 +35,6 @@ export class ClientCreateComponent implements OnInit {
     console.log(this.createClientForm)
     if (this.createClientForm.valid){
       console.log(this.createClientForm.value)
-      this.eventEmit.emit(this.createClientForm.value);
     }
   }
 }

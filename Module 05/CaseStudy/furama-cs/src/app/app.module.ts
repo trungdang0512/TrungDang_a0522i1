@@ -35,7 +35,7 @@ import { ServiceEditComponent } from './component/service-managerment/service-ed
         AppRoutingModule,
         FontAwesomeModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
   providers: [],
   bootstrap: [AppComponent],
