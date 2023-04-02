@@ -1,0 +1,30 @@
+{
+  "product": [
+    {
+      "id": 3,
+      "name": "samsung s20",
+      "price": 20,
+      "description": "new"
+    },
+    {
+      "id": 6,
+      "name": "43242",
+      "price": 424,
+      "description": "32423"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ]
+}
