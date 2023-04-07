@@ -1,0 +1,174 @@
+{
+  "client": [
+    {
+      "id": 1,
+      "nameClient": "Trung Dang",
+      "idClient": "5",
+      "typeClient": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dateOfBirth": "05/12/1992",
+      "phone": 793897616,
+      "email": "vantrung0512@gmail.com",
+      "address": "Huynh Thuc Khang, Da Nang"
+    },
+    {
+      "id": 2,
+      "nameClient": "Dang Trung123132132131",
+      "idClient": "6",
+      "typeClient": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dateOfBirth": "2023-04-04",
+      "phone": "+841213897616",
+      "email": "vantrung0512@gmail.com",
+      "address": "168 Huynh Thuc Khang"
+    },
+    {
+      "id": 3,
+      "nameClient": "Dang Trung",
+      "idClient": "4",
+      "typeClient": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dateOfBirth": "2023-04-12",
+      "phone": "+841213897616",
+      "email": "vantrung0512@gmail.com",
+      "address": "168 Huynh Thuc Khang"
+    },
+    {
+      "id": 4,
+      "nameClient": "123213",
+      "idClient": "3",
+      "typeClient": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dateOfBirth": "2023-04-05",
+      "phone": "13232",
+      "email": "13213",
+      "address": "3131"
+    },
+    {
+      "id": 5,
+      "nameClient": "123123",
+      "idClient": "2",
+      "typeClient": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dateOfBirth": "2023-03-29",
+      "phone": "1",
+      "email": "1",
+      "address": "1"
+    },
+    {
+      "id": 6,
+      "nameClient": "1",
+      "idClient": "1",
+      "typeClient": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dateOfBirth": "2023-04-12",
+      "phone": "1",
+      "email": "1",
+      "address": "1"
+    },
+    {
+      "id": 7,
+      "nameClient": "Dang Trung",
+      "idClient": "123123123",
+      "typeClient": {
+        "id": 5,
+        "name": "Member"
+      },
+      "dateOfBirth": "2023-04-03T17:00:00.000Z",
+      "phone": "0793897616",
+      "email": "vantrung0512@gmail.com",
+      "address": "346 đường 2/9, Q.Hải Châu, TP Đà Nẵng"
+    },
+    {
+      "id": 8,
+      "nameClient": "Dang Trung",
+      "idClient": "123123123",
+      "typeClient": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "dateOfBirth": "2023-04-05",
+      "phone": "0793897616",
+      "email": "vantrung0512@gmail.com",
+      "address": "346 đường 2/9, Q.Hải Châu, TP Đà Nẵng"
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "nameService": "Hiring Room",
+      "area": 20,
+      "floor": 1,
+      "peopleNumber": 4,
+      "cost": 1000,
+      "hireType": "Day Hiring",
+      "status": "New"
+    },
+    {
+      "id": 2,
+      "nameService": "ưdadsda",
+      "area": 12,
+      "floor": 1,
+      "peopleNumber": 3,
+      "cost": "200000",
+      "hireType": "daily",
+      "status": "available"
+    },
+    {
+      "id": 3,
+      "nameService": "1",
+      "area": 1,
+      "floor": 1,
+      "peopleNumber": 1,
+      "cost": "1",
+      "hireType": "1",
+      "status": "1"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "clientId": 1,
+      "serviceId": 1,
+      "startDate": "abc",
+      "endDate": "bcd",
+      "depositMoney": 1000000,
+      "totalMoney": 9000000
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

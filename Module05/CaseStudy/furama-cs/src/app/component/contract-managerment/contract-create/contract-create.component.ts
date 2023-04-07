@@ -1,6 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import {Contract} from "../../../model/contract";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
+import {ContractService} from "../../../service/contract.service";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 @Component({
   selector: 'app-contract-create',
@@ -9,21 +12,19 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class ContractCreateComponent implements OnInit {
   contract: Contract = {};
-  @Output()
-  eventEmit = new EventEmitter();
-
   createContractForm: FormGroup;
 
-  constructor() {
+  constructor(private route: Router,
+              private contractService: ContractService) {
     this.createContractForm = new FormGroup({
-      idContract: new FormControl(''),
-      idEmployee: new FormControl(''),
-      idClient: new FormControl(''),
-      idService: new FormControl(''),
-      startDate: new FormControl(''),
-      endDate: new FormControl(''),
-      depositMoney: new FormControl(''),
-      totalMoney: new FormControl(''),
+        id: new FormControl(),
+        employeeId: new FormControl(),
+        clientId: new FormControl(),
+        serviceId: new FormControl(),
+        startDate: new FormControl(),
+        endDate: new FormControl(),
+        depositMoney: new FormControl(),
+        totalMoney: new FormControl(),
     })
   }
 
@@ -31,10 +32,12 @@ export class ContractCreateComponent implements OnInit {
   }
 
   createNewContract() {
-    console.log(this.createContractForm)
-    if (this.createContractForm.valid){
-      console.log(this.createContractForm.value)
-      this.eventEmit.emit(this.createContractForm.value);
-    }
+    const contract = this.createContractForm.value;
+    console.log(contract);
+    this.contractService.saveContract(contract).subscribe(next =>{
+      this.route.navigateByUrl('contract');
+    });
+    this.createContractForm.reset();
+    Swal.fire('Done', 'You submitted succesfully!', 'success')
   }
 }

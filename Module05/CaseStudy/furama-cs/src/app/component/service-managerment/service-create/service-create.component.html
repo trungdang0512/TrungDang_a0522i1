@@ -3,7 +3,7 @@
     <h2>Add New Service</h2>
     <form [formGroup]="createNewServiceForm" (ngSubmit)="addNewService()">
     <table>
-      <tr>
+      <tr hidden>
         <td>ID:</td>
         <td><label>
           <input formControlName="id">
@@ -57,6 +57,7 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </td>
       </tr>
+
     </table>
     </form>
   </div>

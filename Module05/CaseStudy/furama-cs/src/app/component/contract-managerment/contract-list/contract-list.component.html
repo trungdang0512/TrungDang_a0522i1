@@ -1,10 +1,10 @@
 <center>
-  <h2>Client Information</h2>
+  <h2>Contract Information</h2>
 </center>
 <table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col"><h5>ID Contract</h5></th>
+    <th scope="col"><h5>No</h5></th>
     <th scope="col"><h5>ID Employee</h5></th>
     <th scope="col"><h5>ID Client</h5></th>
     <th scope="col"><h5>ID Service</h5></th>
@@ -12,19 +12,26 @@
     <th scope="col"><h5>End Date</h5></th>
     <th scope="col"><h5>Deposit Money</h5></th>
     <th scope="col"><h5>Total Money</h5></th>
+    <th scope="col"><h5>Edit</h5></th>
+    <th scope="col"><h5>Delete</h5></th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let contract of contracts">
-    <td><p>{{contract.idContract}}</p></td>
-    <td><p>{{contract.idEmployee}}</p></td>
-    <td><p>{{contract.idClient}}</p></td>
-    <td><p>{{contract.idService}}</p></td>
+  <tr *ngFor="let contract of contracts, index as i">
+    <td><p>{{i+1}}</p></td>
+    <td><p>{{contract.employeeId}}</p></td>
+    <td><p>{{contract.clientId}}</p></td>
+    <td><p>{{contract.serviceId}}</p></td>
     <td><p>{{contract.startDate}}</p></td>
     <td><p>{{contract.endDate}}</p></td>
     <td><p>{{contract.depositMoney}}</p></td>
     <td><p>{{contract.totalMoney}}</p></td>
+    <td><button class="btn btn-info" [routerLink]="['/contract/edit', contract.id]">Edit</button></td>
+    <td><button class="btn btn-danger" [routerLink]="['/contract/delete', contract.id]" (click)="deleteContract(contract)">Delete</button></td>
+
   </tr>
   </tbody>
 </table>
-<app-contract-create (eventEmit)="addNewContract($event)"></app-contract-create>
+<center>
+  <button class="btn btn-info" [routerLink]="['/contract/create']">Create New Contract</button>
+</center>

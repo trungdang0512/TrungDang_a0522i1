@@ -17,10 +17,10 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService,
               private route: Router,
               private activatedRoute: ActivatedRoute) {
-    this.productService.getAll().subscribe(next =>{
-      console.log(next);
-      this.products = next;
-    });
+      this.productService.getAll().subscribe(next =>{
+        console.log(next);
+        this.products = next;
+      });
   }
 
   ngOnInit(): void {

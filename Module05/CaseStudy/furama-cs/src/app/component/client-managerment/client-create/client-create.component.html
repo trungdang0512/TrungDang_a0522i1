@@ -1,65 +1,99 @@
 <center>
   <div>
     <h2>Add New Client</h2>
-    <form [formGroup]="createClientForm" (ngSubmit)="addNewClient()">
+    <form [formGroup]="createClientForm" (ngSubmit)="addNewClient()" *ngIf="createClientForm">
     <table>
-      <tr>
+      <tr hidden>
         <td>ID:</td>
         <td><label>
           <input formControlName="id"/>
         </label></td>
       </tr>
       <tr>
-        <td>Name:</td>
+        <td><label class="form-label">Name:</label></td>
         <td><label>
-          <input formControlName="nameClient"/>
+          <input class="form-control" formControlName="nameClient"/>
         </label></td>
+        <mat-error *ngIf="createClientForm.get('nameClient').errors?.required && createClientForm.get('nameClient').touched">
+          Customer's name is <strong>required!</strong>
+        </mat-error>
+        <mat-error *ngIf="(createClientForm.get('nameClient').errors?.minlength || createClientForm.get('nameClient').errors?.maxlength) &&
+                        createClientForm.get('nameClient').touched">
+          Character range from <strong>3 to 45!</strong>
+        </mat-error>
       </tr>
       <tr>
-        <td>ID Number:</td>
+        <td><mat-label>ID Number:</mat-label></td>
         <td><label>
-          <input formControlName="idClient"/>
+          <input class="form-control" matInput formControlName="idClient"  />
         </label></td>
+        <mat-error *ngIf="createClientForm.get('idClient').errors?.required && createClientForm.get('idClient').touched">
+          Customer's identity card is <strong>required!</strong>
+        </mat-error>
+        <mat-error *ngIf="createClientForm.get('idClient').errors?.pattern && createClientForm.get('idClient').touched">
+          Wrong format for identity card <strong>(9 numbers or 12 numbers)!</strong>
+        </mat-error>
       </tr>
       <tr>
-        <td>Type:</td>
-        <td><label>
-          <select formControlName="typeClient">
-            <option value="Silver">Silver</option>
-            <option value="Gold">Gold</option>
-            <option value="Diamond">Diamond</option>
-            <option value="Platinum">Platinum</option>
+        <td><label class="form-label">Type:</label></td>
+        <td>
+          <select class="form-select" formControlName="typeClient">
+            <option *ngFor="let item of customerTypes" [ngValue]="item">{{item.name}}</option>
           </select>
-        </label></td>
+        </td>
+        <mat-error *ngIf="createClientForm.get('typeClient').errors?.required && createClientForm.get('typeClient').touched">
+          Customer's rank is <strong>required!</strong>
+        </mat-error>
       </tr>
       <tr>
         <td>Date Of Birth:</td>
         <td><label>
-          <input type="date" formControlName="dateOfBirth"/>
+          <input class="form-control" formControlName="dateOfBirth" type="date">
         </label></td>
+        <mat-error *ngIf="createClientForm.get('dateOfBirth').errors?.required && createClientForm.get('dateOfBirth').touched">
+          Customer's birthday is <strong>required!</strong>
+        </mat-error>
+        <mat-error *ngIf="createClientForm.controls.dateOfBirth.errors?.pastDate">
+          Birthday can't be <strong>in the future!</strong>
+        </mat-error>
       </tr>
       <tr>
         <td>Phone:</td>
         <td><label>
-          <input formControlName="phone"/>
+          <input class="form-control" formControlName="phone"/>
         </label></td>
+        <mat-error *ngIf="createClientForm.get('phone').errors?.required && createClientForm.get('phone').touched">
+          Customer's phone is <strong>required!</strong>
+        </mat-error>
+        <mat-error *ngIf="createClientForm.get('phone').errors?.pattern&& createClientForm.get('phone').touched">
+          Wrong format for <strong>phone number!</strong>
+        </mat-error>
       </tr>
       <tr>
         <td>Email:</td>
         <td><label>
-          <input formControlName="email"/>
+          <input class="form-control" formControlName="email"/>
         </label></td>
+        <mat-error *ngIf="createClientForm.get('email').errors?.required && createClientForm.get('email').touched">
+          Customer's email is <strong>required!</strong>
+        </mat-error>
+        <mat-error *ngIf="createClientForm.get('email').errors?.email && createClientForm.get('email').touched">
+          Wrong format for <strong>email!</strong>
+        </mat-error>
       </tr>
       <tr>
         <td>Address:</td>
         <td><label>
-          <input formControlName="address"/>
+          <input class="form-control" formControlName="address"/>
         </label></td>
+        <mat-error *ngIf="createClientForm.get('address').errors?.required && createClientForm.get('address').touched">
+          Customer's address is <strong>required!</strong>
+        </mat-error>
       </tr>
       <tr>
         <td colspan="0">
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" [disabled]="createClientForm.invalid">Submit</button>
         </td>
       </tr>
     </table>

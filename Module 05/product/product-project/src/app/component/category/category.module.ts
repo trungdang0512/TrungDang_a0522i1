@@ -10,9 +10,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
-    CategoryListComponent,
-    CategoryCreateComponent,
-    CategoryEditComponent
+
   ],
   imports: [
     CommonModule,

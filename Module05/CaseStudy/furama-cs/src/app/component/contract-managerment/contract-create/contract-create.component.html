@@ -3,28 +3,28 @@
     <h2>Add New Contract</h2>
     <form [formGroup]="createContractForm" (ngSubmit)="createNewContract()">
     <table>
-      <tr>
+      <tr hidden>
         <td>ID Contract:</td>
         <td><label>
-          <input formControlName="idContract"/>
+          <input formControlName="id"/>
         </label></td>
       </tr>
       <tr>
         <td>ID Employee:</td>
         <td><label>
-          <input formControlName="idEmployee"/>
+          <input formControlName="employeeId"/>
         </label></td>
       </tr>
       <tr>
         <td>ID Client:</td>
         <td><label>
-          <input formControlName="idClient"/>
+          <input formControlName="clientId"/>
         </label></td>
       </tr>
       <tr>
         <td>ID Service:</td>
         <td><label>
-          <input formControlName="idService"/>
+          <input formControlName="serviceId"/>
         </label></td>
       </tr>
       <tr>
@@ -54,7 +54,7 @@
       <tr>
         <td colspan="0">
 
-          <button type="submit">Submit</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </td>
       </tr>
     </table>

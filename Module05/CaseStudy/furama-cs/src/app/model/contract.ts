@@ -1,8 +1,8 @@
 export interface Contract {
-  idContract?: number;
-  idEmployee?: number;
-  idClient?: number;
-  idService?: number;
+  id?: number;
+  employeeId?: number;
+  clientId?: number;
+  serviceId?: number;
   startDate?: string;
   endDate?: string;
   depositMoney?: number;

@@ -1,35 +1,47 @@
 <center>
   <h2>Client Information</h2>
+  <div class="col-sm-5">
+<!--    <form (ngSubmit)="search(nameClient.value)">-->
+<!--      <input type="text" #nameClient class="form-control" placeholder="Enter your name">-->
+<!--      <input type="submit"  value="Search" class="btn btn-primary">-->
+<!--    </form>-->
+    <input (keyup.enter)="findByTextExist(search.value)" class="form-control me-2" #search type="search" placeholder="Search" aria-label="Search">
+  </div>
 </center>
+
 <table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col"><h5>ID</h5></th>
-    <th scope="col"><h5>Name</h5></th>
-    <th scope="col"><h5>ID Number</h5></th>
+    <th scope="col"><h5>No</h5></th>
+    <th scope="col" (click)="sort('name')"><h5>Name&nbsp;<fa-icon [icon] = "faSort"></fa-icon> </h5></th>
+    <th scope="col" (click)="sort('idNumber')"><h5>ID Number&nbsp;<fa-icon [icon] = "faSort"></fa-icon></h5></th>
     <th scope="col"><h5>Type</h5></th>
     <th scope="col"><h5>Date of Birth</h5></th>
     <th scope="col"><h5>Phone Number</h5></th>
     <th scope="col"><h5>Email</h5></th>
     <th scope="col"><h5>Address</h5></th>
     <th scope="col"><h5>Edit</h5></th>
-
+    <th scope="col"><h5>Delete</h5></th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let client of clients">
-    <td><p>{{client.id}}</p></td>
+  <tr *ngFor="let client of clients
+  | orderBy: key: reverse | paginate: {itemsPerPage: 5, currentPage: p}; index as i ">
+    <td><p>{{i+1}}</p></td>
     <td><p>{{client.nameClient}}</p></td>
     <td><p>{{client.idClient}}</p></td>
-    <td><p>{{client.typeClient}}</p></td>
+    <td><p>{{client.typeClient.name}}</p></td>
     <td><p>{{client.dateOfBirth}}</p></td>
     <td><p>{{client.phone}}</p></td>
     <td><p>{{client.email}}</p></td>
     <td><p>{{client.address}}</p></td>
     <td><button class="btn btn-info" [routerLink]="['/client/edit', client.id]">Edit</button></td>
+    <td><button class="btn btn-danger" [routerLink]="['/client/delete', client.id]" (click)="deleteClient(client)">Delete</button></td>
   </tr>
   </tbody>
 </table>
+
 <center>
+  <pagination-controls (pageChange) ="p = $event"></pagination-controls>
   <button class="btn btn-info" [routerLink]="['/client/create']">Create New Client</button>
 </center>

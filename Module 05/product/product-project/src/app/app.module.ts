@@ -16,7 +16,13 @@ import {SharedModule} from "./component/shared/shared.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CategoryListComponent,
+    CategoryCreateComponent,
+    CategoryEditComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,8 @@ import {SharedModule} from "./component/shared/shared.module";
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

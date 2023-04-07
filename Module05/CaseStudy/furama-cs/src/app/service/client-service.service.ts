@@ -1,49 +1,39 @@
 import { Injectable } from '@angular/core';
 import {Client} from "../model/client";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientServiceService {
-  clients : Client[] = [
-    {id: 1,
-      nameClient: "Trung Dang",
-      idClient: 123456789,
-      typeClient: "Gold",
-      dateOfBirth: "05/12/1992",
-      phone: 793897616,
-      email: "vantrung0512@gmail.com",
-      address: "Huynh Thuc Khang, Da Nang"
-    },
-    {id: 2,
-      nameClient: "Trung 123",
-      idClient: 1234567892,
-      typeClient: "Platinum",
-      dateOfBirth: "05/12/1992",
-      phone: 7923897616,
-      email: "123123123@gmail.com",
-      address: "Huynh Thuc Khang, Da Nang"
-    }
-  ]
-  constructor() { }
+  clients : Client[] = [];
+  page : number = 1;
 
-  getAll(){
-    return this.clients;
+  constructor(private httpClient: HttpClient) { }
+
+  getAll(): Observable<Client[]> {
+    return this.httpClient.get<Client[]>('http://localhost:3000/client?_' + this.page);
   }
 
-  saveClient(client){
-    return this.clients.push(client);
+  saveClient(event: any): Observable<any> {
+    return this.httpClient.post<any>('http://localhost:3000/client', event);
   }
 
-  findById(value: number){
-    return this.clients.find(client => client.id === value);
+  findClientById(value: number): Observable<Client> {
+    return this.httpClient.get<Client>('http://localhost:3000/client/' + value);
   }
 
-  editClient(client) {
-    for (let i = 0; i < this.clients.length; i++) {
-      if (client.id === this.clients[i].id) {
-        this.clients[i] = client;
-      }
-    }
+  editProduct(value: number, client: Client): Observable<any> {
+    return this.httpClient.put<any>('http://localhost:3000/client/' + value, client);
+  }
+
+
+  deleteProduct(value: number): Observable<any> {
+    return this.httpClient.delete<any>('http://localhost:3000/client/' + value);
+  }
+
+  findByName(name : string ) : Observable<Client[]>{
+    return this.httpClient.get<Client[]>('http://localhost:3000/client?q=' + name);
   }
 }

@@ -1,9 +1,9 @@
 <center>
   <div>
     <h2>Edit Client</h2>
-    <form [formGroup]="editClientForm" (ngSubmit)="editClient()">
+    <form [formGroup]="editClientForm" (ngSubmit)="editClient()" *ngIf="editClientForm">
       <table>
-        <tr>
+        <tr hidden>
           <td>ID:</td>
           <td><label>
             <input formControlName="id" value="{{client.id}}"/>

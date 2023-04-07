@@ -1,9 +1,9 @@
 <center>
   <div>
     <h2>Add New Service</h2>
-    <form [formGroup]="editServiceForm" (ngSubmit)="editService()">
+    <form [formGroup]="editServiceForm" (ngSubmit)="editService()" *ngIf="editServiceForm">
       <table>
-        <tr>
+        <tr hidden>
           <td>ID:</td>
           <td><label>
             <input formControlName="id" value="{{service.id}}"/>

@@ -5,17 +5,37 @@ import {ProductCreateComponent} from "./component/product/product-create/product
 import {CategoryListComponent} from "./component/category/category-list/category-list.component";
 import {CategoryCreateComponent} from "./component/category/category-create/category-create.component";
 import {CategoryEditComponent} from "./component/category/category-edit/category-edit.component";
+import {ProductEditComponent} from "./component/product/product-edit/product-edit.component";
 
 
 let ProductUpdateComponent;
 const routes: Routes = [
   {
-    path: 'product',
-    loadChildren: () => import('./component/product/product.module').then(module => module.ProductModule)
+    path: 'product/list',
+    component: ProductListComponent
   },{
-    path: 'category',
-    loadChildren: () => import('./component/category/category.module').then(module => module.CategoryModule)
-  }
+    path: 'product/create',
+    component: ProductCreateComponent
+  },{
+    path: 'product/edit/:id',
+    component: ProductEditComponent
+  },{
+    path: 'product/delete/:id',
+    component: ProductListComponent
+  },{
+  path: 'category/list',
+    component: CategoryListComponent
+  }, {
+    path: 'category/create',
+    component: CategoryCreateComponent
+  },
+  {
+    path: 'category/edit/:id',
+    component: CategoryEditComponent
+  },
+  { path: 'category/delete/:id',
+    component: CategoryListComponent
+  },
 ];
 
 @NgModule({

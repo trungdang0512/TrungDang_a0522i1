@@ -6,7 +6,7 @@
 
     <label>Password:</label>
     <input type="password" formControlName="password"><br>
-    <p style="color:#ff7355" *ngIf="signupForm.controls.password.hasError('required')">Password can not be blanked</p>
+      <p style="color:#ff7355" *ngIf="signupForm.controls.password.hasError('required')">Password can not be blanked</p>
     <p style="color:#ff7355" *ngIf="signupForm.controls.password.hasError('minLength')">Password must contains more than 6 characters</p>
 
     <label>Confirm Password:</label>

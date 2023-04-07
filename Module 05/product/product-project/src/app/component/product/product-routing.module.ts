@@ -6,19 +6,19 @@ import {CategoryEditComponent} from "../category/category-edit/category-edit.com
 
 
 const routes: Routes = [
-  {
-    path: 'list',
-    component: ProductListComponent
-  },{
-    path: 'create',
-    component: ProductCreateComponent
-  },{
-    path: 'edit/:id',
-    component: CategoryEditComponent
-  },{
-    path: 'delete/:id',
-    component: ProductListComponent
-  }
+  // {
+  //   path: 'list',
+  //   component: ProductListComponent
+  // },{
+  //   path: 'create',
+  //   component: ProductCreateComponent
+  // },{
+  //   path: 'edit/:id',
+  //   component: CategoryEditComponent
+  // },{
+  //   path: 'delete/:id',
+  //   component: ProductListComponent
+  // }
 ];
 
 @NgModule({
